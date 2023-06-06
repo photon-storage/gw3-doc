@@ -6,7 +6,7 @@ nav_order: 1
 permalink: /
 ---
 
-# Welcome to Gateway 3 Docs
+# Welcome to Gateway 3
 
 [Gateway 3](https://www.gw3.io) is an unconventional IPFS portal.
 By offering a rich set of APIs and SDKs, it enables developers to gain accesses to the IPFS network with ease and to build products using IPFS swiftly.
@@ -22,3 +22,15 @@ Data uploaded to Gateway 3 is readily accessible from any IPFS peer.
 Full control of the data in intact.
 
 Sounds exciting? Let's get started.
+
+---
+
+The remaining documentation breaks down into three sections:
+
+* Firstly, the [getting started]() section provides demos to play around.
+This gets you started quickly on basic usages such as posting and retrieving data to IPFS network.
+
+* The [API]() section provides a list of supported Gateway 3 APIs and their parameters.
+
+* If you do not want to deal with the low level APIs, Javascript and Go SDKs are provided to abstract away the underlying API handling.
+The [SDK]() section provides documentation for the SDKs.
