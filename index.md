@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Introduction
+title: Intro
 description: ""
 nav_order: 1
 permalink: /
@@ -17,20 +17,25 @@ The Gateway 3 scales automatically as more requests coming in and intelligently 
 
 The unparalleled cloud-like experience, however, does not come with compromise on the data ownership.
 Gateway 3 is architected as a decentralized protocol from the beginning.
-An IPFS node with conforming Gateway 3 protocol can contribute to the portal network.
+Any IPFS node with conforming Gateway 3 protocol can contribute to the portal network.
 Data uploaded to Gateway 3 is readily accessible from any IPFS peer.
-Full control of the data in intact.
+Full control of the data is intact.
 
 Sounds exciting? Let's get started.
+
+```
+a graph
+```
 
 ---
 
 The remaining documentation breaks down into three sections:
 
-* Firstly, the [getting started]() section provides demos to play around.
+* Firstly, the [getting started](/getting-started) section provides demos to play around.
 This gets you started quickly on basic usages such as posting and retrieving data to IPFS network.
 
-* The [API]() section provides a list of supported Gateway 3 APIs and their parameters.
+* The [API](/api) section provides a list of supported Gateway 3 APIs and their parameters.
 
-* If you do not want to deal with the low level APIs, Javascript and Go SDKs are provided to abstract away the underlying API handling.
-The [SDK]() section provides documentation for the SDKs.
+* The [SDK](/sdk) section provides documentation for Javascript and Go SDKs. The SDK abstracts away the underlying plumbing works.
+The SDK should satisfy the need for most developers.
+More language support are planned.
