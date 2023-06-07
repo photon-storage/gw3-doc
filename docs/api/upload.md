@@ -7,7 +7,11 @@ has_children: false
 permalink: /api/upload
 ---
 
-# POST /ipfs/
+# Upload Data
+
+```javascript
+POST /ipfs/
+```
 
 Uploads data to the IPFS network and returns its CID for retrieval.
 This is a 2-step process.

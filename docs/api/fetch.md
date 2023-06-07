@@ -7,7 +7,11 @@ has_children: false
 permalink: /api/fetch
 ---
 
-# GET /ipfs/{cid}[/{path}][?{params}]
+# Fetch CID
+
+```javascript
+GET /ipfs/{cid}[/{path}][?{params}]
+```
 
 Downloads data at specified immutable content path.
 
@@ -43,8 +47,11 @@ curl -sSL -X GET "https://gw3.io/ipfs/${CID}?ts=${UNIX_TIMESTAMP}&format=car" \
     --output output.car
 ```
 
-# HEAD /ipfs/{cid}[/{path}][?{params}]
+# Probe CID
 
+```javascript
+HEAD /ipfs/{cid}[/{path}][?{params}]
+```
 Same as GET, but does not return any payload.
 
 Implementations are free to limit the scope of IPFS data transfer triggered by HEAD requests to a minimal DAG subset required for producing response headers such as X-Ipfs-Roots, Content-Length and Content-Type.
@@ -52,7 +59,11 @@ Implementations are free to limit the scope of IPFS data transfer triggered by H
 HTTP client can send HEAD request with `Cache-Control: only-if-cached` to disable IPFS data transfer and inexpensively probe if the gateway has the data cached.
 This allows light clients to probe and prioritize gateways which already have the data.
 
-# GET /ipns/{name}[/{path}][?{params}]
+# Fetch IPNS
+
+```javascript
+GET /ipns/{name}[/{path}][?{params}]
+```
 
 Downloads data at specified mutable content path.
 

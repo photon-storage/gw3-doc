@@ -7,7 +7,11 @@ has_children: false
 permalink: /api/pinning
 ---
 
-# POST /api/v0/pin/add?arg={cid}
+# Pin a CID
+
+```javascript
+POST /api/v0/pin/add?arg={cid}
+```
 
 Pin the given `cid`.
 Pinning prevents a CID and its descendents from being garbage collected.
@@ -24,7 +28,11 @@ curl -sSL -X POST "https://gw3.io/api/v0/pin/add?arg=${CID}&ts=${UNIX_TIMESTAMP}
     -H "X-Access-Signature: ${SIG}"
 ```
 
-# POST /api/v0/pin/rm?arg={cid}
+# Unpin a CID
+
+```javascript
+POST /api/v0/pin/rm?arg={cid}
+```
 
 Unpin the given `cid`.
 Unpinning does not remove the CID from the IPFS network immediately.

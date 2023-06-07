@@ -8,9 +8,13 @@ permalink: /api/dag_operation
 ---
 
 A close analogy for the DAG operation is the directory operation in operating system.
-You can create and organized files using paths under the root CID.
+You can create and organize files using paths under the root CID.
 
-# PUT /ipfs/{cid}[/{path}][?{params}]
+# Add to DAG
+
+```javascript
+PUT /ipfs/{cid}[/{path}][?{params}]
+```
 
 Adds data to a DAG.
 `cid` is regarded as an existing root directory, under which the `path` is created.
@@ -39,7 +43,11 @@ curl -sSD - -X PUT $URL -H "Content-Type: text/plain" --data "${DATA}" -o /dev/n
     grep "ipfs-hash"
 ```
 
-# DELETE /ipfs/{cid}[/{path}][?{params}]
+# Remove from DAG
+
+```javascript
+DELETE /ipfs/{cid}[/{path}][?{params}]
+```
 
 Remove data from a DAG.
 `cid` is the DAG root, from which the `path` is deleted.

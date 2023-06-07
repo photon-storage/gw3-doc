@@ -1,13 +1,17 @@
 ---
 layout: default
 title: IPNS
-nav_order: 4
+nav_order: 5
 parent: API
 has_children: false
-permalink: /api/pinning
+permalink: /api/ipns
 ---
 
-# POST /api/v0/name/create?arg={cid}
+# Create IPNS Record
+
+```javascript
+POST /api/v0/name/create?arg={cid}
+```
 
 Create a new IPNS record and bind it to the given `cid`.
 An IPNS record name is returned in the response JSON if the creation request succeeds.
@@ -24,7 +28,11 @@ curl -sSL -X POST "https://gw3.io/api/v0/name/create?arg=${CID}&ts=${UNIX_TIMEST
     jq -r ".data.name"
 ```
 
-# POST /api/v0/name/publish?arg={cid}&key={ipns_name}
+# Update IPNS Record
+
+```javascript
+POST /api/v0/name/publish?arg={cid}&key={ipns_name}
+```
 
 Update an existing IPNS record with `name`, pointing to the given `cid`.
 
