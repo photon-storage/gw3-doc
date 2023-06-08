@@ -19,6 +19,7 @@ This allows data to persist on the IPFS network.
 
 ```bash
 CID="QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og"
+
 SIG=$(echo -e -n "POST\n/api/v0/pin/add\narg=${CID}&ts=${UNIX_TIMESTAMP}" | \
     openssl sha256 -hex -mac HMAC \
     -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
@@ -40,6 +41,7 @@ It simply allows the CID to be garbage collected in the next cycle.
 
 ```bash
 CID="QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og"
+
 SIG=$(echo -e -n "POST\n/api/v0/pin/rm\narg=${CID}&ts=${UNIX_TIMESTAMP}" | \
     openssl sha256 -hex -mac HMAC \
     -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \

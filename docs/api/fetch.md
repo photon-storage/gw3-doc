@@ -28,7 +28,6 @@ SIG=$(echo -e -n "GET\n/ipfs/${CID}\nts=${UNIX_TIMESTAMP}" | \
     openssl sha256 -hex -mac HMAC \
     -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
     xxd -r -p | base64)
-
 # Send request to Gateway 3 and follow through redirection
 curl -sSL -X GET "https://gw3.io/ipfs/${CID}?ts=${UNIX_TIMESTAMP}" \
     -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
@@ -67,12 +66,13 @@ GET /ipns/{name}[/{path}][?{params}]
 
 Downloads data at specified mutable content path.
 
-The `name` is resolved to a CID, then serve response behind a /ipfs/{resolved-cid}[/{path}][?{params}] content path.
+The `name` is resolved to a CID, then serve response behind a `/ipfs/{resolved-cid}[/{path}][?{params}]` content path.
 
 The `name` may refer to a cryptographic IPNS key hash or a human-readable DNS name with DNSLink set-up.
 
 ```bash
 FILEPATH="en.wikipedia-on-ipfs.org/wiki"
+
 SIG=$(echo -e -n "GET\n/ipns/${FILEPATH}\nts=${UNIX_TIMESTAMP}" | \
     openssl sha256 -hex -mac HMAC \
     -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \

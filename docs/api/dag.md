@@ -9,6 +9,8 @@ permalink: /api/dag_operation
 
 A close analogy for the DAG operation is the directory operation in operating system.
 You can create and organize files using paths under the root CID.
+A DAG operation always requires a CID, which identifies the DAG root.
+`QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn` is the CID for an empty DAG root node.
 
 # Add to DAG
 
@@ -17,13 +19,12 @@ PUT /ipfs/{cid}[/{path}][?{params}]
 ```
 
 Adds data to a DAG.
-`cid` is regarded as an existing root directory, under which the `path` is created.
+`cid` specifies the DAG root node, under which the `path` is created.
 The `path` can be nested directories that lead to a file.
-To get started with, it is often convenient to use CID constant `QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn`, which represents an empty "directory".
+To create a DAG from scratch, use CID constant `QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn`.
 
-The process is similar to the POST operation.
-A CID is returned in the response header `ipfs-hash` if the PUT request succeeds.
-The CID represents the root CID of the new DAG after the addition.
+Similar to upload request, a CID is returned in the response header `ipfs-hash` if the PUT request succeeds.
+The CID represents the root node of the new DAG after the addition.
 A follow-up operation can be performed on the new CID to further update the DAG.
 
 ```bash
@@ -50,9 +51,9 @@ DELETE /ipfs/{cid}[/{path}][?{params}]
 ```
 
 Remove data from a DAG.
-`cid` is the DAG root, from which the `path` is deleted.
+`cid` specifies the DAG root node, from which the `path` is deleted.
 A CID is returned in the response header `ipfs-hash` if the PUT request succeeds.
-The CID represents the root CID of the new DAG after deletion.
+The CID represents the root node of the new DAG after deletion.
 A follow-up operation can be performed on the new CID to further update the DAG.
 
 ```bash
