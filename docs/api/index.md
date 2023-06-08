@@ -6,16 +6,16 @@ has_children: true
 permalink: /api
 ---
 
-# Gateway 3 API
+# Gateway3 API
 
-Gateway 3 implements a subset of the IPFS's [path gateway specification](https://specs.ipfs.tech/http-gateways/path-gateway/).
+Gateway3 implements a subset of the IPFS's [path gateway specification](https://specs.ipfs.tech/http-gateways/path-gateway/).
 The writable API extension, while not defined by the specification, allows you to upload data, create DAG and pin CIDs.
 If you have used [Kubo](https://github.com/ipfs/kubo)'s HTTP gateway API, you will find it familiar.
-To accomplish common tasks such as uploading and pinning data, [SDK](/sdk) is the preferred way to interact with Gateway 3.
-If your choice of programming language is not available yet, the Gateway 3 API can be used.
+To accomplish common tasks such as uploading and pinning data, [SDK](/sdk) is the preferred way to interact with Gateway3.
+If your choice of programming language is not available yet, the Gateway3 API can be used.
 
-Gateway 3 API is a set of HTTP endpoints collectively offered by Gateway 3 and participating IPFS nodes.
-Gateway 3 handles authorization and load balancing through HTTP redirection (i.e. 307 Temporary Redirect).
+Gateway3 API is a set of HTTP endpoints collectively offered by Gateway3 and participating IPFS nodes.
+Gateway3 handles authorization and load balancing through HTTP redirection (i.e. 307 Temporary Redirect).
 Most HTTP client should be able to handle the redirection transparently for GET requests.
 Other request types need a 2-step process.
 
@@ -23,8 +23,8 @@ Other request types need a 2-step process.
 
 Authentication allows the network to verify the integrity of the request and identity of the requester.
 The identity is used for access control, usage tracking, rate limiting and etc.
-Gateway 3 uses [HMAC](https://en.wikipedia.org/wiki/HMAC) (Hash Message Authenciation Code) for authentication.
-In order to access Gateway 3 programmatically, a pair of access key and a access key is required.
+Gateway3 uses [HMAC](https://en.wikipedia.org/wiki/HMAC) (Hash Message Authenciation Code) for authentication.
+In order to access Gateway3 programmatically, a pair of access key and a access key is required.
 
 In addition to request specific headers, authentication requires a `X-Access-Signature` header along with access key in `X-Access-Key` header.
 If signature is missing or mismatched, request is rejected.

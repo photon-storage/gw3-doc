@@ -28,7 +28,7 @@ SIG=$(echo -e -n "GET\n/ipfs/${CID}\nts=${UNIX_TIMESTAMP}" | \
     openssl sha256 -hex -mac HMAC \
     -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
     xxd -r -p | base64)
-# Send request to Gateway 3 and follow through redirection
+# Send request to Gateway3 and follow through redirection
 curl -sSL -X GET "https://gw3.io/ipfs/${CID}?ts=${UNIX_TIMESTAMP}" \
     -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
     -H "X-Access-Signature: ${SIG}"

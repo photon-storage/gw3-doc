@@ -15,7 +15,7 @@ POST /ipfs/
 
 Uploads data to the IPFS network and returns its CID for retrieval.
 This is a 2-step process.
-It first acquires authorization from Gateway 3 by providing data size and signature.
+It first acquires authorization from Gateway3 by providing data size and signature.
 A successful response contains a url, which is used to upload data.
 Data is included in the HTTP body of the second POST request.
 A CID is returned in the response header `ipfs-hash` if the POST request succeeds.
