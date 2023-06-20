@@ -8,9 +8,7 @@ permalink: /
 
 # Welcome to Gateway 3
 
-```
-              a graph
-```
+![welcome to Gateway3 docs](/assets/welcome.png)
 
 [Gateway 3](https://www.gw3.io) is an unconventional IPFS portal.
 By offering a rich set of APIs and SDKs, it enables developers to gain accesses to the IPFS network with ease and to build products using IPFS swiftly.
@@ -27,9 +25,7 @@ Full control of the data is intact.
 
 Sounds exciting? Let's get started.
 
-```
-              a graph
-```
+![let's get started](/assets/started.png)
 
 ---
 
