@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Golang SDK
-nav_order: 2
+nav_order: 1
 parent: SDK
 has_children: false
 permalink: /sdk/golang
