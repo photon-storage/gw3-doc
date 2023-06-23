@@ -28,7 +28,7 @@ import "github.com/photon-storage/gw3-sdk-go"
   - [func (c *Client) UpdateIPNS(name, value string) error](<#func-client-updateipns>)
 
 
-## type [Client](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/client.go#L13-L19>)
+## type [Client](<https://github.com/photon-storage/gw3-sdk-go/blob/main/client.go#L13-L19>)
 
 Client represents a Gateway3 client for interacting with the Gateway3.
 
@@ -38,7 +38,7 @@ type Client struct {
 }
 ```
 
-### func [NewClient](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/client.go#L23>)
+### func [NewClient](<https://github.com/photon-storage/gw3-sdk-go/blob/main/client.go#L23>)
 
 ```go
 func NewClient(accessKey, accessSecret string) (*Client, error)
@@ -46,7 +46,7 @@ func NewClient(accessKey, accessSecret string) (*Client, error)
 
 NewClient creates a new Gateway3 client with the provided access key and access secret.
 
-### func \(\*Client\) [AuthPost](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/post.go#L35>)
+### func \(\*Client\) [AuthPost](<https://github.com/photon-storage/gw3-sdk-go/blob/main/post.go#L35>)
 
 ```go
 func (c *Client) AuthPost(size int) (string, error)
@@ -54,7 +54,7 @@ func (c *Client) AuthPost(size int) (string, error)
 
 AuthPost gets the authorized URL from the Gateway3.
 
-### func \(\*Client\) [CreateIPNS](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/ipns.go#L16>)
+### func \(\*Client\) [CreateIPNS](<https://github.com/photon-storage/gw3-sdk-go/blob/main/ipns.go#L16>)
 
 ```go
 func (c *Client) CreateIPNS(value string) (string, error)
@@ -62,7 +62,7 @@ func (c *Client) CreateIPNS(value string) (string, error)
 
 CreateIPNS creates a new IPNS record and binds it to the given CID. This function should only be used for creating a new record. To update an existing IPNS record, use the UpdateIPNS interface.
 
-### func \(\*Client\) [Get](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/get.go#L12>)
+### func \(\*Client\) [Get](<https://github.com/photon-storage/gw3-sdk-go/blob/main/get.go#L12>)
 
 ```go
 func (c *Client) Get(cid string) ([]byte, error)
@@ -70,7 +70,7 @@ func (c *Client) Get(cid string) ([]byte, error)
 
 Get retrieves data from the Gateway3 for the given CID.
 
-### func \(\*Client\) [Pin](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/pin.go#L9>)
+### func \(\*Client\) [Pin](<https://github.com/photon-storage/gw3-sdk-go/blob/main/pin.go#L9>)
 
 ```go
 func (c *Client) Pin(cid string) error
@@ -78,7 +78,7 @@ func (c *Client) Pin(cid string) error
 
 Pin requests Gateway3 to pin the given CID.
 
-### func \(\*Client\) [Post](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/post.go#L10>)
+### func \(\*Client\) [Post](<https://github.com/photon-storage/gw3-sdk-go/blob/main/post.go#L10>)
 
 ```go
 func (c *Client) Post(data []byte) (string, error)
@@ -86,7 +86,7 @@ func (c *Client) Post(data []byte) (string, error)
 
 Post uploads the given data to Gateway3 and returns the corresponding CID.
 
-### func \(\*Client\) [Unpin](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/pin.go#L27>)
+### func \(\*Client\) [Unpin](<https://github.com/photon-storage/gw3-sdk-go/blob/main/pin.go#L27>)
 
 ```go
 func (c *Client) Unpin(cid string) error
@@ -94,7 +94,7 @@ func (c *Client) Unpin(cid string) error
 
 Unpin requests Gateway3 to unpin the given CID.
 
-### func \(\*Client\) [UpdateIPNS](<https://github.com-kmax/photon-storage/gw3-sdk-go/blob/main/ipns.go#L35>)
+### func \(\*Client\) [UpdateIPNS](<https://github.com/photon-storage/gw3-sdk-go/blob/main/ipns.go#L35>)
 
 ```go
 func (c *Client) UpdateIPNS(name, value string) error
