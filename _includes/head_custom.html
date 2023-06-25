@@ -1,18 +1,9 @@
-<ul>
-  {% for page in site.pages %}
-    {% if page.parent == null %}
-      <li>
-        <a href="{{ page.url }}">{{ page.title }}</a>
-        {% if page.has_children %}
-          <ul>
-            {% for subpage in site.pages %}
-              {% if subpage.parent == page.title %}
-                <li><a href="{{ subpage.url }}">{{ subpage.title }}</a></li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TP2ER7PTZJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TP2ER7PTZJ');
+</script>
