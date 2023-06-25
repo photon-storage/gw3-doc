@@ -2,6 +2,7 @@
 layout: default
 title: Account
 nav_order: 2
+parent: API
 has_children: true
 permalink: /api/account
 ---
