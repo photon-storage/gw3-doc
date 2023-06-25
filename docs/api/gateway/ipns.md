@@ -2,9 +2,9 @@
 layout: default
 title: IPNS
 nav_order: 5
-parent: API
+parent: Gateway
 has_children: false
-permalink: /api/ipns
+permalink: /api/gateway/ipns
 ---
 
 # Create IPNS Record

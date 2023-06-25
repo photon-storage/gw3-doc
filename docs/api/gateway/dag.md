@@ -2,9 +2,9 @@
 layout: default
 title: DAG Operation
 nav_order: 3
-parent: API
+parent: Gateway
 has_children: false
-permalink: /api/dag_operation
+permalink: /api/gateway/dag_operation
 ---
 
 A close analogy for the DAG operation is the directory operation in operating system.

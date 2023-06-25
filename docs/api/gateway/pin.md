@@ -2,9 +2,9 @@
 layout: default
 title: Pinning
 nav_order: 4
-parent: API
+parent: Gateway
 has_children: false
-permalink: /api/pinning
+permalink: /api/gateway/pinning
 ---
 
 # Pin a CID

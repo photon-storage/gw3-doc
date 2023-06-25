@@ -2,7 +2,7 @@
 layout: default
 title: Upload
 nav_order: 2
-parent: API
+parent: Gateway
 has_children: false
 permalink: /api/upload
 ---

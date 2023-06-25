@@ -2,9 +2,9 @@
 layout: default
 title: Fetch
 nav_order: 1
-parent: API
+parent: Gateway
 has_children: false
-permalink: /api/fetch
+permalink: /api/gateway/fetch
 ---
 
 # Fetch CID
