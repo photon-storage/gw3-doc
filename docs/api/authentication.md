@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Authentication
-nav_order: 3
+nav_order: 1
 parent: API
 has_children: false
 permalink: /api/authentication
