@@ -3,6 +3,7 @@ layout: default
 title: Partner
 nav_order: 2
 parent: Account
+grand_parent: API
 has_children: false
 permalink: /api/account/partner
 ---

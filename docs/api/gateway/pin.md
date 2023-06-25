@@ -3,6 +3,7 @@ layout: default
 title: Pinning
 nav_order: 4
 parent: Gateway
+grand_parent: API
 has_children: false
 permalink: /api/gateway/pinning
 ---

@@ -3,6 +3,7 @@ layout: default
 title: Fetch
 nav_order: 1
 parent: Gateway
+grand_parent: API
 has_children: false
 permalink: /api/gateway/fetch
 ---

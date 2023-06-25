@@ -3,6 +3,7 @@ layout: default
 title: DAG Operation
 nav_order: 3
 parent: Gateway
+grand_parent: API
 has_children: false
 permalink: /api/gateway/dag_operation
 ---
