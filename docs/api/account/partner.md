@@ -8,7 +8,7 @@ has_children: false
 permalink: /api/account/partner
 ---
 
-The Partner API is designed to support the reseller business model. As a partner, you are enabled to create accounts for your users, manage their API keys, and select appropriate plan for them. Please note that this is not a universal API. You must become a partner of Gateway3 to utilize the APIs listed below.
+The Partner API is designed to support developers who want to create sub-accounts programmatically. As a partner, you are enabled to create accounts for your users, manage their API keys, and select the appropriate plan for them. Please note that this is not a universal API. You must become a partner with Gateway3 to utilize the APIs listed below.
 
 # Create Account
 
