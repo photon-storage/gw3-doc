@@ -1,47 +1,19 @@
 ---
 layout: default
-title: Partner
-nav_order: 2
+title: Common
+nav_order: 1
 parent: Account
 grand_parent: API
 has_children: false
-permalink: /api/account/partner
+permalink: /api/account/common
 ---
 
-The Partner API is designed to support developers who want to create sub-accounts programmatically. As a partner, you are enabled to create accounts for your users, manage their API keys, and select the appropriate plan for them. Please note that this is not a universal API. You must become a partner with Gateway3 to utilize the APIs listed below.
-
-# Create Account
+# Account Stats
 
 ```javascript
-POST /api/v0/partner/user/create
+GET /api/v0/stats
 ```
-Create a new account for your user. The UUID is the unique key that partners use to identify their users. It will be used to interact with the other APIs like modify that user's status.
-
-Request body
-
-```json
-{
-    "email": "example@example.com",
-    "name": "John Doe",
-    "uuid": "123e4567-e89b-12d3-a456-426614174000"
-}
-```
-
-Response body
-
-```json
-{
-    "code": 200,
-    "msg": "ok"
-}
-```
-
-# User Stats
-
-```javascript
-GET /api/v0/partner/user/stats?uuid={ user_uuid }
-```
-Get the usage status for the user by UUID.
+Get the usage status for the the account.
 
 Response body
 
@@ -68,32 +40,46 @@ Response body
 
 ```
 
-# Update User Plan
+# Plans
 
 ```javascript
-POST /api/v0/partner/user/update-plan
+GET /api/v0/plans
 ```
-Change the user's plan under the partner. The difference in fees will be charged directly to the partner's account.
-
-Request body
-
-```json
-{
-    "uuid": "123e4567-e89b-12d3-a456-426614174000",
-    "plan_id": 6
-}
-```
+List all the available plans.
 
 Response body
 
 ```json
 {
     "code": 200,
-    "msg": "ok"
+    "msg": "",
+    "data": [
+        {
+            "id": 1,
+            "name": "Free",
+            "price": "0.00",
+            "pinned_count_limit": 100,
+            "pinned_bytes_limit": 1073741824,
+            "ingress_limit": 5368709120,
+            "egress_limit": 5368709120,
+            "ipns_limit": 3
+        },
+        {
+            "id": 3,
+            "name": "Plan0",
+            "price": "$ 9.99",
+            "pinned_count_limit": 2000,
+            "pinned_bytes_limit": 107374182400,
+            "ingress_limit": 21474836480,
+            "egress_limit": 21474836480,
+            "ipns_limit": 1
+        },
+    ]
 }
+
 ```
 
-# Create User Access Key
+# Create Access Key
 
 ```javascript
 POST /api/v0/partner/user/key
@@ -104,7 +90,6 @@ Request body
 
 ```json
 {
-    "uuid": "123e4567-e89b-12d3-a456-426614174000",
     "name": "test_key",
     "permissions": ["read", "write", "pin", "unpin"]
 }
@@ -123,12 +108,12 @@ Response body
 }
 ```
 
-# List User Access Key
+# List Access Key
 
 ```javascript
 GET /api/v0/partner/user/keys?uuid={ user_uuid }
 ```
-List all the access keys for the given user.
+List all your access keys.
 
 Response body
 
@@ -160,13 +145,12 @@ Response body
 ```javascript
 DELETE /api/v0/partner/user/key
 ```
-Delete the access key by name for the selected user.
+Delete the access key by name.
 
 Request body
 
 ```json
 {
-    "uuid": "123e4567-e89b-12d3-a456-426614174000",
     "name": "test_key"
 }
 ```
