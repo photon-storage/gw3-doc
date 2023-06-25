@@ -13,7 +13,7 @@ The Partner API is designed to support developers who want to create sub-account
 # Create Account
 
 ```javascript
-POST /api/v0/partner/create-account
+POST /api/v0/partner/user/create
 ```
 Create a new account for your user. The UUID is the unique key that partners use to identify their users. It will be used to interact with the other APIs like modify that user's status.
 
@@ -39,7 +39,7 @@ Response body
 # User Stats
 
 ```javascript
-GET /api/v0/partner/stats?uuid={ user_uuid }
+GET /api/v0/partner/user/stats?uuid={ user_uuid }
 ```
 Get the usage status for the user by UUID.
 
@@ -69,7 +69,7 @@ Response body
 # Update User Plan
 
 ```javascript
-POST /api/v0/partner/update-plan
+POST /api/v0/partner/user/update-plan
 ```
 Change the user's plan under the partner. The difference in fees will be charged directly to the partner's account.
 
@@ -94,7 +94,7 @@ Response body
 # Create User Access Key
 
 ```javascript
-POST /api/v0/partner/create-key
+POST /api/v0/partner/user/key
 ```
 Create an access key with given permissions for user. The available permissions are admin, read, write, pin, and unpin. If you give admin permission, that's equivalent to giving all the permissions.
 
@@ -124,7 +124,7 @@ Response body
 # List User Access Key
 
 ```javascript
-GET /api/v0/partner/keys?uuid={ user_uuid }
+GET /api/v0/partner/user/keys?uuid={ user_uuid }
 ```
 List all the access keys for the given user.
 
@@ -156,7 +156,7 @@ Response body
 # Delete User Access Key
 
 ```javascript
-POST /api/v0/partner/delete-key
+DELETE /api/v0/partner/user/key
 ```
 Delete the access key by name for the selected user.
 
