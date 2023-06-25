@@ -82,7 +82,7 @@ Response body
 # Create Access Key
 
 ```javascript
-POST /api/v0/partner/user/key
+POST /api/v0/key
 ```
 Create an access key with given permissions for user. The available permissions are admin, read, write, pin, and unpin. If you give admin permission, that's equivalent to giving all the permissions.
 
@@ -111,7 +111,7 @@ Response body
 # List Access Key
 
 ```javascript
-GET /api/v0/partner/user/keys?uuid={ user_uuid }
+GET /api/v0/keys
 ```
 List all your access keys.
 
@@ -143,7 +143,7 @@ Response body
 # Delete User Access Key
 
 ```javascript
-DELETE /api/v0/partner/user/key
+DELETE /api/v0/key
 ```
 Delete the access key by name.
 
