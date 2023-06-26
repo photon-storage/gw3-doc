@@ -52,6 +52,7 @@ Response body
     "data": {
         "name": "John Doe",
         "email": "example@example.com",
+        "email_verified": false,
         "plan": "v1",
         "pinned_count": 23,
         "pinned_count_limit": 100,
