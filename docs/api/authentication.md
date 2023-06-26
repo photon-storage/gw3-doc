@@ -40,3 +40,8 @@ For example, parameter `bar` should appear before `foo`:
 request_params = "bar=value0&foo=value1"
 ```
 A parameter `ts`, containing unix timestamp, is required for each request.
+
+## Example Implementations
+
+- For Golang, you can refer to this [Go SDK](https://github.com/photon-storage/gw3-sdk-go/blob/77dd520560d6d1e7f869214b54fb502ee92d3243/common.go#L16)
+- For JavaScript, you can refer to this [JS SDK](https://github.com/photon-storage/gw3-sdk-js/blob/d725f9e3741af24e4a682cfc135cd300117358e3/lib/utils.ts#L5)
