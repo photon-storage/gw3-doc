@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Intro
-description: ""
+description: "Welcome to Gateway3 docs"
 nav_order: 1
 permalink: /
 ---
