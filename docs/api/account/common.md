@@ -23,6 +23,7 @@ Response body
     "msg": "ok",
     "data": {
         "name": "John Doe",
+        "provider": "gw3",
         "email": "example@example.com",
         "email_verified": true,
         "plan": "v1",
