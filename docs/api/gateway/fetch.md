@@ -15,6 +15,7 @@ GET /ipfs/{cid}[/{path}][?{params}]
 ```
 
 Downloads data at specified immutable content path.
+
 | Parameter | Required | Description | Example |
 | --- | --- | --- | --- |
 | cid | Yes | A valid Content Identifier (CID) | QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ |
