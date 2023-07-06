@@ -15,15 +15,30 @@ GET /ipfs/{cid}[/{path}][?{params}]
 ```
 
 Downloads data at specified immutable content path.
+| Parameter | Required | Description | Example |
+| --- | --- | --- | --- |
+| cid | Yes | A valid Content Identifier (CID) | QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ |
+| path | No | Path parameter pointing at a file or a directory under the cid content root | /folder/file.txt |
+| filename | No | Query parameters that sets the name returned in Content-Disposition HTTP header | filename=file.txt |
+| format | No | Query parameters that URL-friendly alternative to sending Accept header | format=car |
 
-`cid`: a valid content identifier (CID).
-
-`path`: optional path parameter pointing at a file or a directory under the cid content root.
-
-`params`: optional query parameters that adjust response behavior.
-Supported params are: format, filename.
-
+## Example
 ```bash
+curl -sSL -X GET 'https://gw3.io/ipfs/QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ?ts=1688644825' \
+    -H 'X-Access-Key: cfd406b6-edd7-40bc-9aae-13c527195f38' \
+    -H 'X-Access-Signature: N/NUIELqc6DPnOlOiLE2iMEjducRMgIXHbwgVPSRipY='
+
+# The output might look something like this:
+# "EThe Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
+```
+
+## Run Your Case
+```bash
+UNIX_TIMESTAMP=$(date +%s)
+CID="QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ"
+GW3_ACCESS_KEY="your access key here"
+GW3_SECRET_KEY="your secret here"
+
 # Calculate request signature
 SIG=$(echo -e -n "GET\n/ipfs/${CID}\nts=${UNIX_TIMESTAMP}" | \
     openssl sha256 -hex -mac HMAC \
