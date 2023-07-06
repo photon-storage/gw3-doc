@@ -16,12 +16,12 @@ GET /ipfs/{cid}[/{path}][?{params}]
 
 Downloads data at specified immutable content path.
 
-| Parameter | Required | Description | Example |
-| --- | --- | --- | --- |
-| cid | Yes | A valid Content Identifier (CID) | QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ |
-| path | No | Path parameter pointing at a file or a directory under the cid content root | /folder/file.txt |
-| filename | No | Query parameters that sets the name returned in Content-Disposition HTTP header | filename=file.txt |
-| format | No | Query parameters that URL-friendly alternative to sending Accept header | format=car |
+| Parameter | Description | Example |
+| --- | --- | --- |
+| cid (required) | A valid Content Identifier (CID) | QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ |
+| path (optional) | Path parameter pointing at a file or a directory under the cid content root | /folder/file.txt |
+| filename (optional) | Query parameters that sets the name returned in Content-Disposition HTTP header | filename=file.txt |
+| format (optional) | Query parameters that URL-friendly alternative to sending Accept header | format=car |
 
 ## Example
 
@@ -36,7 +36,8 @@ curl -sSL -X GET 'https://gw3.io/ipfs/QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U
 
 ## Run Your Case
 
-Regular case
+Regular case.
+
 ```bash
 UNIX_TIMESTAMP=$(date +%s)
 CID="QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ"
@@ -54,7 +55,8 @@ curl -sSL -X GET "https://gw3.io/ipfs/${CID}?ts=${UNIX_TIMESTAMP}" \
     -H "X-Access-Signature: ${SIG}"
 ```
 
-A format parameter can be used to retrieve content in trustless form (.car file).
+Use format parameter to retrieve content in trustless form (.car file) case.
+
 ```bash
 UNIX_TIMESTAMP=$(date +%s)
 CID="QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ"
