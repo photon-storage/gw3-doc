@@ -16,12 +16,25 @@ GET /ipfs/{cid}[/{path}][?{params}]
 
 Downloads data at specified immutable content path.
 
-| Parameter | Description | Example |
-| --- | --- | --- |
-| cid (required) | A valid Content Identifier (CID) | QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ |
-| path (optional) | Path parameter pointing at a file or a directory under the cid content root | /folder/file.txt |
-| filename (optional) | Query parameters that sets the name returned in Content-Disposition HTTP header | filename=file.txt |
-| format (optional) | Query parameters that URL-friendly alternative to sending Accept header | format=car |
+- **cid** 
+  - Required: Yes
+  - Description: A valid Content Identifier (CID)
+  - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
+  
+- **path**
+  - Required: No
+  - Description: Path parameter pointing at a file or a directory under the cid content root
+  - Example: `/folder/file.txt`
+
+- **filename**
+  - Required: No
+  - Description: Query parameters that sets the name returned in Content-Disposition HTTP header
+  - Example: `filename=file.txt`
+
+- **format**
+  - Required: No
+  - Description: Query parameters that URL-friendly alternative to sending Accept header 
+  - Example: `format=car`
 
 ## Example
 
