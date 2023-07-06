@@ -24,6 +24,7 @@ Downloads data at specified immutable content path.
 | format | No | Query parameters that URL-friendly alternative to sending Accept header | format=car |
 
 ## Example
+
 ```bash
 curl -sSL -X GET 'https://gw3.io/ipfs/QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ?ts=1688644825' \
     -H 'X-Access-Key: cfd406b6-edd7-40bc-9aae-13c527195f38' \
@@ -34,6 +35,8 @@ curl -sSL -X GET 'https://gw3.io/ipfs/QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U
 ```
 
 ## Run Your Case
+
+Regular case
 ```bash
 UNIX_TIMESTAMP=$(date +%s)
 CID="QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ"
@@ -53,6 +56,11 @@ curl -sSL -X GET "https://gw3.io/ipfs/${CID}?ts=${UNIX_TIMESTAMP}" \
 
 A format parameter can be used to retrieve content in trustless form (.car file).
 ```bash
+UNIX_TIMESTAMP=$(date +%s)
+CID="QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ"
+GW3_ACCESS_KEY="your access key here"
+GW3_SECRET_KEY="your secret here"
+
 SIG=$(echo -e -n "GET\n/ipfs/${CID}\nformat=car&ts=${UNIX_TIMESTAMP}" | \
     openssl sha256 -hex -mac HMAC \
     -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
@@ -61,6 +69,8 @@ curl -sSL -X GET "https://gw3.io/ipfs/${CID}?ts=${UNIX_TIMESTAMP}&format=car" \
     -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
     -H "X-Access-Signature: ${SIG}" \
     --output output.car
+
+# The output is in the output.car file.
 ```
 
 # Probe CID
