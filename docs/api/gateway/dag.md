@@ -64,23 +64,39 @@ curl -X PUT -D - 'https://sample.dag.com/ipfs/?sargs=auth-data&ssig=sign-data' \
 DELETE /ipfs/{cid}[/{path}][?{params}]
 ```
 
-Remove data from a DAG.
-`cid` specifies the DAG root node, from which the `path` is deleted.
-A CID is returned in the response header `ipfs-hash` if the PUT request succeeds.
-The CID represents the root node of the new DAG after deletion.
-A follow-up operation can be performed on the new CID to further update the DAG.
+Remove data from a DAG. A CID is returned in the response header `ipfs-hash` if the PUT request succeeds.
+The CID represents the root node of the new DAG after deletion.A follow-up operation can be performed on the new CID to further update the DAG.
+
+- **cid**
+  - Required: Yes
+  - Description: `cid` specifies the DAG root node
+  - Example: `QmXD3svmCE9KR3kiUSZyZuso5DW3q3hLqBtSqXrFAv22Wc`
+
+- **path**
+  - Required: Yes
+  - Description: the `path` to be deleted.
+  - Example: `/example.txt`
+
+- **ts**
+  - Required: Yes
+  - Description: Query parameters that represent the timestamp now
+  - Example: `1688644825`
 
 ```bash
-ROOT="QmUcCD6xUMkwQVsChPRYKJQVtduea9VFJJjzuEFqa92fYm"
-FILEPATH="${ROOT}/example.txt"
+curl -sS -X DELETE "https://gw3.io/ipfs/QmUcCD6xUMkwQVsChPRYKJQVtduea9VFJJjzuEFqa92fYm/example.txt?ts=1688644825" \
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET' | jq
 
-SIG=$(echo -e -n "DELETE\n/ipfs/${FILEPATH}\nts=${UNIX_TIMESTAMP}" | \
-    openssl sha256 -hex -mac HMAC \
-    -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
-    xxd -r -p | base64)
-URL=$(curl -sS -X DELETE "https://gw3.io/ipfs/${FILEPATH}?ts=${UNIX_TIMESTAMP}" \
-    -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
-    -H "X-Access-Signature: ${SIG}" | \
-    jq -r ".data.url")
-curl -sSD - -X DELETE $URL -o /dev/null | grep "ipfs-hash"
+# You should receive a response similar to this:
+# {
+#    "code":200,
+#    "msg":"ok",
+#    "data":{
+#       "url":"https://delete.dag.com/ipfs/?sargs=auth-data&ssig=sign-data"
+#    }
+# }
+
+curl -sSD - -X DELETE 'https://delete.dag.com/ipfs/?sargs=auth-data&ssig=sign-data'
+# The response header will have something like:
+# ipfs-hash: QmXy8XTZxWZu9cpnVN44oK77xHQQGCKevosGzuvz1ZsZSX
 ```
