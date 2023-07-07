@@ -11,7 +11,7 @@ permalink: /api/account/common
 # Account Stats
 
 ```javascript
-GET /api/v0/stats
+GET https://account.gw3.io/api/v0/stats
 ```
 Get the usage status for the the account.
 
@@ -45,7 +45,7 @@ Response body
 # Plans
 
 ```javascript
-GET /api/v0/plans
+GET https://account.gw3.io/api/v0/plans
 ```
 List all the available plans.
 
@@ -84,7 +84,7 @@ Response body
 # Create Access Key
 
 ```javascript
-POST /api/v0/key
+POST https://account.gw3.io/api/v0/key
 ```
 Create an access key with given permissions for user. The available permissions are admin, read, write, pin, and unpin. If you give admin permission, that's equivalent to giving all the permissions.
 
@@ -113,7 +113,7 @@ Response body
 # List Access Key
 
 ```javascript
-GET /api/v0/keys
+GET https://account.gw3.io/api/v0/keys
 ```
 List all your access keys.
 
@@ -145,7 +145,7 @@ Response body
 # Delete User Access Key
 
 ```javascript
-DELETE /api/v0/key
+DELETE https://account.gw3.io/api/v0/key
 ```
 Delete the access key by name.
 
