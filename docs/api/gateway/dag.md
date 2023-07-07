@@ -36,6 +36,8 @@ Adds data to a DAG. Similar to upload request, a CID is returned in the response
   - Description: Query parameters that represent the timestamp now
   - Example: `1688644825`
 
+## Example
+
 ```bash
 # Upload example text to a DAG root and get the new DAG root.
 curl -sS -X PUT "https://gw3.io/ipfs/QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn/example.txt?size=88718&ts=1688644825" \
@@ -81,6 +83,8 @@ The CID represents the root node of the new DAG after deletion.A follow-up opera
   - Required: Yes
   - Description: Query parameters that represent the timestamp now
   - Example: `1688644825`
+
+## Example
 
 ```bash
 curl -sS -X DELETE "https://gw3.io/ipfs/QmUcCD6xUMkwQVsChPRYKJQVtduea9VFJJjzuEFqa92fYm/example.txt?ts=1688644825" \
