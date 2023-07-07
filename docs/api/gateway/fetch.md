@@ -70,20 +70,29 @@ This allows light clients to probe and prioritize gateways which already have th
 GET /ipns/{name}[/{path}][?{params}]
 ```
 
-Downloads data at specified mutable content path.
+Downloads data at specified mutable content path. The `name` is resolved to a CID, then serve response behind a `/ipfs/{resolved-cid}[/{path}][?{params}]` content path.
 
-The `name` is resolved to a CID, then serve response behind a `/ipfs/{resolved-cid}[/{path}][?{params}]` content path.
+- **name** 
+  - Required: Yes
+  - Description: a cryptographic IPNS key hash or a human-readable DNS name with DNSLink set-up.
+  - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
 
-The `name` may refer to a cryptographic IPNS key hash or a human-readable DNS name with DNSLink set-up.
+- **ts** 
+  - Required: Yes
+  - Description: Query parameters that represent the timestamp now
+  - Example: `1688644825`
+
+- **path**
+  - Required: No
+  - Description: Path parameter pointing at a file or a directory under the cid content root
+  - Example: `/folder/file.txt`
+
+## Example
 
 ```bash
-FILEPATH="en.wikipedia-on-ipfs.org/wiki"
+curl -sSL -X GET 'https://gw3.io/ipns/12D3KooWHWW3BLh5kFo1eDNdJhfznDDJJdtooSZJ42iRX756kYbP?ts=1688698793' \
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 
-SIG=$(echo -e -n "GET\n/ipns/${FILEPATH}\nts=${UNIX_TIMESTAMP}" | \
-    openssl sha256 -hex -mac HMAC \
-    -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
-    xxd -r -p | base64)
-curl -sSL -X GET "https://gw3.io/ipns/${FILEPATH}?ts=${UNIX_TIMESTAMP}" \
-    -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
-    -H "X-Access-Signature: ${SIG}"
+# The output is a image.
 ```
