@@ -75,7 +75,7 @@ Downloads data at specified mutable content path. The `name` is resolved to a CI
 - **name** 
   - Required: Yes
   - Description: a cryptographic IPNS key hash or a human-readable DNS name with DNSLink set-up.
-  - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
+  - Example: `12D3KooWHWW3BLh5kFo1eDNdJhfznDDJJdtooSZJ42iRX756kYbP`
 
 - **ts** 
   - Required: Yes
