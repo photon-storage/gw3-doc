@@ -12,8 +12,10 @@ The Partner API is designed to support developers who want to create sub-account
 
 # Create Account
 
-```javascript
-POST https://account.gw3.io/api/v0/partner/user/create
+```bash
+curl -X POST https://account.gw3.io/api/v0/partner/user/create\
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
 Create a new account for your user. The UUID is the unique key that partners use to identify their users. It will be used to interact with the other APIs like modify that user's status.
 
@@ -38,8 +40,10 @@ Response body
 
 # User Stats
 
-```javascript
-GET https://account.gw3.io/api/v0/partner/user/stats?uuid={ user_uuid }
+```bash
+curl -X GET https://account.gw3.io/api/v0/partner/user/stats?uuid={ user_uuid }\
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
 Get the usage status for the user by UUID.
 
@@ -71,8 +75,10 @@ Response body
 
 # Update User Plan
 
-```javascript
-POST https://account.gw3.io/api/v0/partner/user/update-plan
+```bash
+curl -X POST https://account.gw3.io/api/v0/partner/user/update-plan\
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
 Change the user's plan under the partner. The difference in fees will be charged directly to the partner's account.
 
@@ -96,8 +102,10 @@ Response body
 
 # Create User Access Key
 
-```javascript
-POST https://account.gw3.io/api/v0/partner/user/key
+```bash
+curl -X POST https://account.gw3.io/api/v0/partner/user/key\
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
 Create an access key with given permissions for user. The available permissions are admin, read, write, pin, and unpin. If you give admin permission, that's equivalent to giving all the permissions.
 
@@ -126,8 +134,10 @@ Response body
 
 # List User Access Key
 
-```javascript
-GET https://account.gw3.io/api/v0/partner/user/keys?uuid={ user_uuid }
+```bash
+curl -X GET https://account.gw3.io/api/v0/partner/user/keys?uuid={ user_uuid }\
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
 List all the access keys for the given user.
 
@@ -158,8 +168,10 @@ Response body
 
 # Delete User Access Key
 
-```javascript
-DELETE https://account.gw3.io/api/v0/partner/user/key
+```bash
+curl -X DELETE https://account.gw3.io/api/v0/partner/user/key\
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
 Delete the access key by name for the selected user.
 
