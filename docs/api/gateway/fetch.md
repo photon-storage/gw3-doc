@@ -44,20 +44,9 @@ Downloads data at specified immutable content path.
 ## Example
 
 ```bash
-UNIX_TIMESTAMP=$(date +%s)
-CID="QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ"
-GW3_ACCESS_KEY="YOUR_ACCESS_KEY"
-GW3_SECRET_KEY="YOUR_ACCESS_SECRET"
-
-# Send request to Gateway3 and follow through redirection
-curl -sSL -X GET "https://gw3.io/ipfs/${CID}?ts=${UNIX_TIMESTAMP}" \
-    -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
-    -H "X-Access-Secret: ${GW3_SECRET_KEY}"
-
-# Bash will execute:
-# curl -sSL -X GET 'https://gw3.io/ipfs/QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ?ts=1688698793' \
-#   -H 'X-Access-Key: YOUR_ACCESS_KEY'
-#   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -sSL -X GET 'https://gw3.io/ipfs/QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ?ts=1688698793' \
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 
 # The output might look something like this:
 # "EThe Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
