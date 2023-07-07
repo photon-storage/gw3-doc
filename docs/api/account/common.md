@@ -11,7 +11,7 @@ permalink: /api/account/common
 # Account Stats
 
 ```bash
-curl -X GET https://account.gw3.io/api/v0/stats\
+curl -X GET 'https://account.gw3.io/api/v0/stats'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
@@ -47,7 +47,7 @@ Response body
 # Plans
 
 ```bash
-curl -X GET https://account.gw3.io/api/v0/plans
+curl -X GET 'https://account.gw3.io/api/v0/plans'
 ```
 List all the available plans.
 
@@ -86,7 +86,7 @@ Response body
 # Create Access Key
 
 ```bash
-curl -X POST https://account.gw3.io/api/v0/key\
+curl -X POST 'https://account.gw3.io/api/v0/key'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
@@ -117,7 +117,7 @@ Response body
 # List Access Key
 
 ```bash
-curl -X GET https://account.gw3.io/api/v0/keys\
+curl -X GET 'https://account.gw3.io/api/v0/keys'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
@@ -151,7 +151,7 @@ Response body
 # Delete User Access Key
 
 ```bash
-curl -X DELETE https://account.gw3.io/api/v0/key\
+curl -X DELETE 'https://account.gw3.io/api/v0/key'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```

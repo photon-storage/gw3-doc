@@ -13,7 +13,7 @@ The Partner API is designed to support developers who want to create sub-account
 # Create Account
 
 ```bash
-curl -X POST https://account.gw3.io/api/v0/partner/user/create\
+curl -X POST 'https://account.gw3.io/api/v0/partner/user/create'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
@@ -41,7 +41,7 @@ Response body
 # User Stats
 
 ```bash
-curl -X GET https://account.gw3.io/api/v0/partner/user/stats?uuid={ user_uuid }\
+curl -X GET 'https://account.gw3.io/api/v0/partner/user/stats?uuid={ user_uuid }'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
@@ -76,7 +76,7 @@ Response body
 # Update User Plan
 
 ```bash
-curl -X POST https://account.gw3.io/api/v0/partner/user/update-plan\
+curl -X POST 'https://account.gw3.io/api/v0/partner/user/update-plan'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
@@ -103,7 +103,7 @@ Response body
 # Create User Access Key
 
 ```bash
-curl -X POST https://account.gw3.io/api/v0/partner/user/key\
+curl -X POST 'https://account.gw3.io/api/v0/partner/user/key'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
@@ -135,7 +135,7 @@ Response body
 # List User Access Key
 
 ```bash
-curl -X GET https://account.gw3.io/api/v0/partner/user/keys?uuid={ user_uuid }\
+curl -X GET 'https://account.gw3.io/api/v0/partner/user/keys?uuid={ user_uuid }'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
@@ -169,7 +169,7 @@ Response body
 # Delete User Access Key
 
 ```bash
-curl -X DELETE https://account.gw3.io/api/v0/partner/user/key\
+curl -X DELETE 'https://account.gw3.io/api/v0/partner/user/key'\
    -H 'X-Access-Key: YOUR_ACCESS_KEY' \
    -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
 ```
