@@ -17,17 +17,31 @@ POST /api/v0/name/create?arg={cid}
 Create a new IPNS record and bind it to the given `cid`.
 An IPNS record name is returned in the response JSON if the creation request succeeds.
 
-```bash
-CID="QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og"
+- **arg**
+  - Required: Yes
+  - Description: A valid Content Identifier (CID)
+  - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
 
-SIG=$(echo -e -n "POST\n/api/v0/name/create\narg=${CID}&ts=${UNIX_TIMESTAMP}" | \
-    openssl sha256 -hex -mac HMAC \
-    -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
-    xxd -r -p | base64)
-curl -sSL -X POST "https://gw3.io/api/v0/name/create?arg=${CID}&ts=${UNIX_TIMESTAMP}" \
-    -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
-    -H "X-Access-Signature: ${SIG}" | \
-    jq -r ".data.name"
+- **ts**
+  - Required: Yes
+  - Description: Query parameters that represent the timestamp now
+  - Example: `1688644825`
+
+## Example
+
+```bash
+curl -sSL -X POST "https://gw3.io/api/v0/name/create?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&ts=1688644825" \
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+
+# {
+#   "code": 200,
+#   "msg": "ok",
+#   "data": {
+#     "name": "12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn",
+#     "value": "QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og"
+#   }
+# }
 ```
 
 # Update IPNS Record
@@ -38,15 +52,34 @@ POST /api/v0/name/publish?arg={cid}&key={ipns_name}
 
 Update an existing IPNS record with `name`, pointing it to the given `cid`.
 
-```bash
-NAME="12D3KooWLps3iFBRDtXpgS4yjfek1hntk6zMMkraqYC8bPHjWvDk"
-CID="QmUcCD6xUMkwQVsChPRYKJQVtduea9VFJJjzuEFqa92fYm"
+- **key**
+  - Required: Yes
+  - Description: A IPNS record
+  - Example: `12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn`
 
-SIG=$(echo -e -n "POST\n/api/v0/name/publish\narg=${CID}&key=${NAME}&ts=${UNIX_TIMESTAMP}" | \
-    openssl sha256 -hex -mac HMAC \
-    -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
-    xxd -r -p | base64)
-curl -sSL -X POST "https://gw3.io/api/v0/name/publish?arg=${CID}&key=${NAME}&ts=${UNIX_TIMESTAMP}" \
-    -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
-    -H "X-Access-Signature: ${SIG}"
+- **arg**
+  - Required: Yes
+  - Description: A valid Content Identifier (CID)
+  - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
+
+- **ts**
+  - Required: Yes
+  - Description: Query parameters that represent the timestamp now
+  - Example: `1688644825`
+
+## Example
+
+```bash
+curl -sSL -X POST "https://gw3.io/api/v0/name/publish?arg=Qmc7pB5AgED3fKa2MVxY6PBoVswQACfDDfBtFs1c7XCwpU&key=12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn&ts=1688644825" \
+   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
+   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+
+# {
+#   "code": 200,
+#   "msg": "",
+#   "data": {
+#     "name": "12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn",
+#     "value": "Qmc7pB5AgED3fKa2MVxY6PBoVswQACfDDfBtFs1c7XCwpU"
+#   }
+# }
 ```
