@@ -8,16 +8,20 @@ has_children: false
 permalink: /api/account/partner
 ---
 
-The Partner API is designed to support developers who want to create sub-accounts programmatically. As a partner, you are enabled to create accounts for your users, manage their API keys, and select the appropriate plan for them. Please note that this is not a universal API. You must become a partner with Gateway3 to utilize the APIs listed below.
+The Partner API is designed to support developers who want to create sub-accounts programmatically.
+As a partner, you are enabled to create user accounts, manage their API keys, and select the their appropriate plans.
+You must become a qualified Gateway3 partner to utilize the APIs listed below.
 
 # Create Account
 
 ```bash
-curl -X POST 'https://account.gw3.io/api/v0/partner/user/create'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X POST "https://account.gw3.io/api/v0/partner/user/create" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-Create a new account for your user. The UUID is the unique key that partners use to identify their users. It will be used to interact with the other APIs like modify that user's status.
+Create a new user account.
+The UUID is an unique key for each user.
+It is used by other APIs.
 
 Request body
 
@@ -41,11 +45,11 @@ Response body
 # User Stats
 
 ```bash
-curl -X GET 'https://account.gw3.io/api/v0/partner/user/stats?uuid={ user_uuid }'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X GET "https://account.gw3.io/api/v0/partner/user/stats?uuid={ user_uuid }" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-Get the usage status for the user by UUID.
+Get usage stats for a given user.
 
 Response body
 
@@ -76,11 +80,12 @@ Response body
 # Update User Plan
 
 ```bash
-curl -X POST 'https://account.gw3.io/api/v0/partner/user/update-plan'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X POST "https://account.gw3.io/api/v0/partner/user/update-plan" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-Change the user's plan under the partner. The difference in fees will be charged directly to the partner's account.
+Change a user's plan.
+The incurred fee is charged directly to the partner's account.
 
 Request body
 
@@ -103,11 +108,13 @@ Response body
 # Create User Access Key
 
 ```bash
-curl -X POST 'https://account.gw3.io/api/v0/partner/user/key'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X POST "https://account.gw3.io/api/v0/partner/user/key" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-Create an access key with given permissions for user. The available permissions are admin, read, write, pin, and unpin. If you give admin permission, that's equivalent to giving all the permissions.
+Create an access key with the given permissions for a user.
+The available permissions are admin, read, write, pin, and unpin.
+Teh admin permission is equivalent to granting all the permissions.
 
 Request body
 
@@ -135,11 +142,11 @@ Response body
 # List User Access Key
 
 ```bash
-curl -X GET 'https://account.gw3.io/api/v0/partner/user/keys?uuid={ user_uuid }'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X GET "https://account.gw3.io/api/v0/partner/user/keys?uuid={ user_uuid }" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-List all the access keys for the given user.
+List all the access keys for a given user.
 
 Response body
 
@@ -169,11 +176,11 @@ Response body
 # Delete User Access Key
 
 ```bash
-curl -X DELETE 'https://account.gw3.io/api/v0/partner/user/key'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X DELETE "https://account.gw3.io/api/v0/partner/user/key" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-Delete the access key by name for the selected user.
+Delete the access key by name for a given user.
 
 Request body
 

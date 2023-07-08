@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Gateway
-nav_order: 2
+nav_order: 1
 parent: API
 has_children: true
 permalink: /api/gateway
@@ -22,17 +22,14 @@ Other request types need a 2-step process.
 
 ## API endpoints
 
-Endpoint: [https://gw3.io](https://gw3.io)
+Endpoint: `https://gw3.io`
 
 This section goes through each endpoint and demonstrates the usage using `bash` command.
 You can get hands dirty by playing with these bash commands without extra coding.
 A few bash tools are required to successfully run the command:
 
 * curl: making HTTP request
-* openssl: calculating request signature
 * date: current unix timestap
-* base64: encoding/decoding Base64 string
-* xxd: encoding/decoding hex stirng
 * jq: json parser
 
 These are often preinstalled in common Unix-like systems, although usage may vary slightly in different systems.

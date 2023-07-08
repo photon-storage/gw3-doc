@@ -22,18 +22,18 @@ PUT /ipfs/{cid}[/{path}][?{params}]
 Adds data to a DAG. Similar to upload request, a CID is returned in the response header `ipfs-hash` if the PUT request succeeds. The CID represents the root node of the new DAG after the addition. A follow-up operation can be performed on the new CID to further update the DAG.
 
 - **cid**
-  - Required: Yes
+  - Required: yes
   - Description: `cid` specifies the DAG root node
   - Example: `QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn`
 
 - **path**
-  - Required: Yes
-  - Description: can be nested directories that lead to a file.
-  - Example: `/example.txt`
+  - Required: yes
+  - Description: file path under the root CID
+  - Example: `/foo/bar/example.txt`
 
 - **ts**
-  - Required: Yes
-  - Description: Query parameters that represent the timestamp now
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
 ## Example
@@ -41,8 +41,8 @@ Adds data to a DAG. Similar to upload request, a CID is returned in the response
 ```bash
 # Upload example text to a DAG root and get the new DAG root.
 curl -sS -X PUT "https://gw3.io/ipfs/QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn/example.txt?size=88718&ts=1688644825" \
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET' | jq
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET" | jq
 
 # You should receive a response similar to this:
 # {
@@ -53,7 +53,7 @@ curl -sS -X PUT "https://gw3.io/ipfs/QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA
 #    }
 # }
 
-curl -X PUT -D - 'https://sample.dag.com/ipfs/?sargs=auth-data&ssig=sign-data' \
+curl -X PUT -D - "https://sample.dag.com/ipfs/?sargs=auth-data&ssig=sign-data" \
      -F file=@example.txt
 # The response header will have something like:
 # ipfs-hash: QmXD3svmCE9KR3kiUSZyZuso5DW3q3hLqBtSqXrFAv22Wc
@@ -70,26 +70,26 @@ Remove data from a DAG. A CID is returned in the response header `ipfs-hash` if 
 The CID represents the root node of the new DAG after deletion.A follow-up operation can be performed on the new CID to further update the DAG.
 
 - **cid**
-  - Required: Yes
+  - Required: yes
   - Description: `cid` specifies the DAG root node
   - Example: `QmXD3svmCE9KR3kiUSZyZuso5DW3q3hLqBtSqXrFAv22Wc`
 
 - **path**
-  - Required: Yes
+  - Required: yes
   - Description: the `path` to be deleted.
-  - Example: `/example.txt`
+  - Example: `/foo/bar/example.txt`
 
 - **ts**
-  - Required: Yes
-  - Description: Query parameters that represent the timestamp now
+  - Required: yes
+  - Description: a query parameter that represents the current timestamp
   - Example: `1688644825`
 
 ## Example
 
 ```bash
 curl -sS -X DELETE "https://gw3.io/ipfs/QmUcCD6xUMkwQVsChPRYKJQVtduea9VFJJjzuEFqa92fYm/example.txt?ts=1688644825" \
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET' | jq
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET" | jq
 
 # You should receive a response similar to this:
 # {
@@ -100,7 +100,7 @@ curl -sS -X DELETE "https://gw3.io/ipfs/QmUcCD6xUMkwQVsChPRYKJQVtduea9VFJJjzuEFq
 #    }
 # }
 
-curl -sSD - -X DELETE 'https://delete.dag.com/ipfs/?sargs=auth-data&ssig=sign-data'
+curl -sSD - -X DELETE "https://delete.dag.com/ipfs/?sargs=auth-data&ssig=sign-data"
 # The response header will have something like:
 # ipfs-hash: QmXy8XTZxWZu9cpnVN44oK77xHQQGCKevosGzuvz1ZsZSX
 ```

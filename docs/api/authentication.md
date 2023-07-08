@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Authentication
-nav_order: 1
+nav_order: 3
 parent: API
 has_children: false
 permalink: /api/authentication
@@ -9,8 +9,18 @@ permalink: /api/authentication
 
 # Authentication
 
-Authentication allows the network to verify the integrity of the request and identity of the requester.
-The identity is used for access control, usage tracking, rate limiting and etc.
+Authentication is used to identify the requester.
+The identity is the basis for access control, usage tracking, rate limiting and etc.
+
+Gateway3 supports two authentication methods:
+- Access headers: this is the most convenient method and fits for most scenarios.
+- Request signature: this is considered more secure than the access headers' approach. With signed request, the URL can be shared without leaking your access secret.
+
+## Auth Headers
+This is the preferred way to access Gateway3 if you are not sharing your acess URLs.
+Simply sending a request with headers `X-Access-Key` and `X-Access-Secret`.
+
+## Request Signature
 Gateway3 uses [HMAC](https://en.wikipedia.org/wiki/HMAC) (Hash Message Authenciation Code) for authentication.
 In order to access Gateway3 programmatically, a pair of access key and a access key is required.
 

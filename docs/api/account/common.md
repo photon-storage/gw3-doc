@@ -11,11 +11,11 @@ permalink: /api/account/common
 # Account Stats
 
 ```bash
-curl -X GET 'https://account.gw3.io/api/v0/stats'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X GET "https://account.gw3.io/api/v0/stats" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-Get the usage status for the the account.
+Get the usage stats for a given account.
 
 Response body
 
@@ -47,7 +47,7 @@ Response body
 # Plans
 
 ```bash
-curl -X GET 'https://account.gw3.io/api/v0/plans'
+curl -X GET "https://account.gw3.io/api/v0/plans"
 ```
 List all the available plans.
 
@@ -86,11 +86,13 @@ Response body
 # Create Access Key
 
 ```bash
-curl -X POST 'https://account.gw3.io/api/v0/key'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X POST "https://account.gw3.io/api/v0/key" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-Create an access key with given permissions for user. The available permissions are admin, read, write, pin, and unpin. If you give admin permission, that's equivalent to giving all the permissions.
+Create an access key with the given permissions for a user.
+The available permissions are admin, read, write, pin, and unpin.
+The admin permission is equivalent to granting all the permissions.
 
 Request body
 
@@ -117,11 +119,11 @@ Response body
 # List Access Key
 
 ```bash
-curl -X GET 'https://account.gw3.io/api/v0/keys'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X GET "https://account.gw3.io/api/v0/keys" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
-List all your access keys.
+List all access keys.
 
 Response body
 
@@ -151,9 +153,9 @@ Response body
 # Delete User Access Key
 
 ```bash
-curl -X DELETE 'https://account.gw3.io/api/v0/key'\
-   -H 'X-Access-Key: YOUR_ACCESS_KEY' \
-   -H 'X-Access-Secret: YOUR_ACCESS_SECRET'
+curl -X DELETE "https://account.gw3.io/api/v0/key" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
 Delete the access key by name.
 

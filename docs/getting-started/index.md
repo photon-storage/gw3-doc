@@ -22,13 +22,9 @@ UNIX_TIMESTAMP=$(date +%s)
 ## Upload a text string
 DATA="EThe Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
 
-SIG=$(echo -e -n "POST\n/ipfs/\nsize=${#DATA}&ts=${UNIX_TIMESTAMP}" | \
-    openssl sha256 -hex -mac HMAC \
-    -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
-    xxd -r -p | base64)
 URL=$(curl -sS -X POST "https://gw3.io/ipfs/?size=${#DATA}&ts=${UNIX_TIMESTAMP}" \
-    -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
-    -H "X-Access-Signature: ${SIG}" | \
+    -H "X-Access-Key: YOUR_ACCESS_KEY" \
+    -H "X-Access-Secret: YOUR_ACCESS_SECRET | \"
     jq -r ".data.url")
 # curl header dump has \r at the end of each line.
 CID=$(curl -sSi -X POST $URL -H "Content-Type: text/plain" --data "${DATA}" | \
@@ -40,13 +36,9 @@ echo -e "Data uploaded, CID = ${CID}"
 echo -e "Retrieving data:"
 
 ## Retrieve the uploaded data using its CID.
-SIG=$(echo -e -n "GET\n/ipfs/${CID}\nts=${UNIX_TIMESTAMP}" | \
-    openssl sha256 -hex -mac HMAC \
-    -macopt hexkey:$(echo ${GW3_SECRET_KEY} | base64 -d | xxd -p -c0) | \
-    xxd -r -p | base64)
 curl -sSL -X GET "https://gw3.io/ipfs/${CID}?ts=${UNIX_TIMESTAMP}" \
-    -H "X-Access-Key: ${GW3_ACCESS_KEY}" \
-    -H "X-Access-Signature: ${SIG}"
+    -H "X-Access-Key: YOUR_ACCESS_KEY" \
+    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
 echo -e "Done"
 ```
