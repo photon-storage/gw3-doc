@@ -56,7 +56,7 @@ Response body
 ```json
 {
     "code": 200,
-    "msg": "",
+    "msg": "ok",
     "data": [
         {
             "id": 1,

@@ -76,7 +76,7 @@ curl -sSL -X POST "https://gw3.io/api/v0/name/publish?arg=Qmc7pB5AgED3fKa2MVxY6P
 
 # {
 #   "code": 200,
-#   "msg": "",
+#   "msg": "ok",
 #   "data": {
 #     "name": "12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn",
 #     "value": "Qmc7pB5AgED3fKa2MVxY6PBoVswQACfDDfBtFs1c7XCwpU"
