@@ -17,6 +17,11 @@ curl -X GET "https://account.gw3.io/api/v0/stats?ts=1688644825" \
 ```
 Get the usage stats for a given account.
 
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
+
 Response body
 
 ```json
@@ -95,6 +100,11 @@ Create an access key with the given permissions for a user.
 The available permissions are admin, read, write, pin, and unpin.
 The admin permission is equivalent to granting all the permissions.
 
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
+
 Request body
 
 ```json
@@ -125,6 +135,11 @@ curl -X GET "https://account.gw3.io/api/v0/keys?ts=1688644825" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
 List all access keys.
+
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
 
 Response body
 
@@ -159,6 +174,11 @@ curl -X DELETE "https://account.gw3.io/api/v0/key?ts=1688644825" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
 Delete the access key by name.
+
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
 
 Request body
 

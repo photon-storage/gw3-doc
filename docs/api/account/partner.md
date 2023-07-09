@@ -23,6 +23,11 @@ Create a new user account.
 The UUID is an unique key for each user.
 It is used by other APIs.
 
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
+
 Request body
 
 ```json
@@ -45,11 +50,21 @@ Response body
 # User Stats
 
 ```bash
-curl -X GET "https://account.gw3.io/api/v0/partner/user/stats?uuid={ user_uuid }&ts=1688644825" \
+curl -X GET "https://account.gw3.io/api/v0/partner/user/stats?uuid=jack_001&ts=1688644825" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
 Get usage stats for a given user.
+
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
+
+- **uuid**
+  - Required: yes
+  - Description: The UUID used when creating the user.
+  - Example: `jack_001`
 
 Response body
 
@@ -89,6 +104,11 @@ curl -X POST "https://account.gw3.io/api/v0/partner/user/update-plan?ts=16886448
 Change a user's plan.
 The incurred fee is charged directly to the partner's account.
 
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
+
 Request body
 
 ```json
@@ -118,6 +138,11 @@ Create an access key with the given permissions for a user.
 The available permissions are admin, read, write, pin, and unpin.
 Teh admin permission is equivalent to granting all the permissions.
 
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
+
 Request body
 
 ```json
@@ -144,11 +169,16 @@ Response body
 # List User Access Key
 
 ```bash
-curl -X GET "https://account.gw3.io/api/v0/partner/user/keys?uuid={ user_uuid }&?ts=1688644825" \
+curl -X GET "https://account.gw3.io/api/v0/partner/user/keys?uuid=jack_001&?ts=1688644825" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
 List all the access keys for a given user.
+
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
 
 Response body
 
@@ -183,6 +213,11 @@ curl -X DELETE "https://account.gw3.io/api/v0/partner/user/key?ts=1688644825" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
 Delete the access key by name for a given user.
+
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
 
 Request body
 
