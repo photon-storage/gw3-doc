@@ -63,6 +63,7 @@ Response body
         "email": "example@example.com",
         "email_verified": false,
         "plan": "v1",
+        "next_bill_at": 1689902000,
         "pinned_count": 23,
         "pinned_count_limit": 100,
         "pinned_bytes": 374182,
