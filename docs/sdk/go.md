@@ -26,7 +26,8 @@ import "github.com/photon-storage/gw3-sdk-go"
   - [func (c *Client) Post(data []byte) (string, error)](<#func-client-post>)
   - [func (c *Client) Unpin(cid string) error](<#func-client-unpin>)
   - [func (c *Client) UpdateIPNS(name, value string) error](<#func-client-updateipns>)
-
+  - [func (c *Client) DAGAdd(root, path string, data []byte) (string, error)](<#func-dag-add>)
+  - [func (c *Client) DAGRemove(root, path string) (string, error)](<#func-dag-remove>)
 
 ## type [Client](<https://github.com/photon-storage/gw3-sdk-go/blob/main/client.go#L13-L19>)
 
@@ -101,3 +102,19 @@ func (c *Client) UpdateIPNS(name, value string) error
 ```
 
 UpdateIPNS updates the value for the IPNS record specified by the given name.
+
+### func \(\*Client\) [DAGAdd](<https://github.com/photon-storage/gw3-sdk-go/blob/main/dag.go#L14>)
+
+```go
+func (c *Client) DAGAdd(root, path string, data []byte) (string, error)
+```
+
+DAGAdd adds a new CID and path to the existing dag, generating a new dag root.
+
+### func \(\*Client\) [DAGRemove](<https://github.com/photon-storage/gw3-sdk-go/blob/main/dag.go#L69>)
+
+```go
+func (c *Client) DAGRemove(root, path string) (string, error)
+```
+
+DAGRemove removes a path from the existing dag, generating a new dag root.
