@@ -26,8 +26,8 @@ import "github.com/photon-storage/gw3-sdk-go"
   - [func (c *Client) Post(data []byte) (string, error)](<#func-client-post>)
   - [func (c *Client) Unpin(cid string) error](<#func-client-unpin>)
   - [func (c *Client) UpdateIPNS(name, value string) error](<#func-client-updateipns>)
-  - [func (c *Client) DAGAdd(root, path string, data []byte) (string, error)](<#func-dag-add>)
-  - [func (c *Client) DAGRemove(root, path string) (string, error)](<#func-dag-remove>)
+  - [func (c *Client) DAGAdd(root, path string, data []byte) (string, error)](<#func-client-dagadd>)
+  - [func (c *Client) DAGRemove(root, path string) (string, error)](<#func-client-dagremove>)
 
 ## type [Client](<https://github.com/photon-storage/gw3-sdk-go/blob/main/client.go#L13-L19>)
 
