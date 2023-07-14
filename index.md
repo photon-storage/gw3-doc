@@ -31,11 +31,11 @@ Sounds exciting? Let's get started.
 
 The remaining documentation breaks down into three sections:
 
-* Firstly, the [getting started](/getting-started) section provides demos to play around.
+* Firstly, the [getting started](/getting-started.html) section provides demos to play around.
 This gets you started quickly on basic usages such as posting and retrieving data to/from the IPFS network.
 
-* The [API](/api) section provides a list of supported Gateway3 APIs and their parameters.
+* The [API](/api.html) section provides a list of supported Gateway3 APIs and their parameters.
 
-* The [SDK](/sdk) section provides documentation for Javascript and Go SDKs. The SDK abstracts away the underlying plumbing works.
+* The [SDK](/sdk.html) section provides documentation for Javascript and Go SDKs. The SDK abstracts away the underlying plumbing works.
 The SDK should satisfy the need for most developers.
 More language supports are planned.

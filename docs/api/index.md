@@ -3,7 +3,7 @@ layout: default
 title: API
 nav_order: 3
 has_children: true
-permalink: /api
+permalink: /api.html
 ---
 
 # Gateway3 APIs
@@ -30,4 +30,4 @@ Endpoint: `https://account.gw3.io`
 To access these APIs, you need to log into [Gateway3 dashboard](https://gw3.io) and generate your API access key and secret.
 Gateway3 supports two authentication methods.
 The authentication allows Gateway3 to verify your identity.
-Please refer to the [Authentication](/api/authentication) section for details.
+Please refer to the [Authentication](/api/authentication.html) section for details.

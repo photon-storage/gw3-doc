@@ -5,7 +5,7 @@ nav_order: 2
 parent: Account
 grand_parent: API
 has_children: false
-permalink: /api/account/partner
+permalink: /api/account/partner.html
 ---
 
 The Partner API is designed to support developers who want to create sub-accounts programmatically.

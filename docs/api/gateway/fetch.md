@@ -5,7 +5,7 @@ nav_order: 1
 parent: Gateway
 grand_parent: API
 has_children: false
-permalink: /api/gateway/fetch
+permalink: /api/gateway/fetch.html
 ---
 
 # Fetch CID

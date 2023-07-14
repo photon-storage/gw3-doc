@@ -4,7 +4,7 @@ title: Javascript SDK
 nav_order: 2
 parent: SDK
 has_children: false
-permalink: /sdk/js
+permalink: /sdk/js.html
 ---
 
 # Javascript SDK

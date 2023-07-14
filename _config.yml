@@ -22,7 +22,7 @@ title: Gateway 3 Docs
 email: your-email@example.com
 description: Gateway3's documentation is your fast track to integrating into the Web3 world and building exceptional dapps.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://doc.gw3.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://doc.gw3.io"
 twitter_username: gw3_io
 github_username: photon-storage
 

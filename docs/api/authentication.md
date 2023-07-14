@@ -4,7 +4,7 @@ title: Authentication
 nav_order: 3
 parent: API
 has_children: false
-permalink: /api/authentication
+permalink: /api/authentication.html
 ---
 
 # Authentication

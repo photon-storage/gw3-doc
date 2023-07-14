@@ -5,7 +5,7 @@ nav_order: 5
 parent: Gateway
 grand_parent: API
 has_children: false
-permalink: /api/gateway/ipns
+permalink: /api/gateway/ipns.html
 ---
 
 # Create IPNS Record

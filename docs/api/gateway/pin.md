@@ -5,7 +5,7 @@ nav_order: 4
 parent: Gateway
 grand_parent: API
 has_children: false
-permalink: /api/gateway/pinning
+permalink: /api/gateway/pinning.html
 ---
 
 # Pin a CID

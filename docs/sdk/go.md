@@ -4,7 +4,7 @@ title: Golang SDK
 nav_order: 1
 parent: SDK
 has_children: false
-permalink: /sdk/golang
+permalink: /sdk/golang.html
 ---
 
 # Golang SDK

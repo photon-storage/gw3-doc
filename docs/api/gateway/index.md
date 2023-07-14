@@ -4,7 +4,7 @@ title: Gateway
 nav_order: 1
 parent: API
 has_children: true
-permalink: /api/gateway
+permalink: /api/gateway.html
 ---
 
 # Gateway API
@@ -12,7 +12,7 @@ permalink: /api/gateway
 Gateway3 implements a subset of the IPFS's [path gateway specification](https://specs.ipfs.tech/http-gateways/path-gateway/).
 The writable API extension, while not defined by the specification, allows you to upload data, create DAG and pin CIDs.
 If you have used [Kubo](https://github.com/ipfs/kubo)'s HTTP gateway API, you will find it familiar.
-To accomplish common tasks such as uploading and pinning data, [SDK](/sdk) is the preferred way to interact with Gateway3.
+To accomplish common tasks such as uploading and pinning data, [SDK](/sdk.html) is the preferred way to interact with Gateway3.
 If your choice of programming language is not available yet, the Gateway3 API can be used.
 
 Gateway3 API is a set of HTTP endpoints collectively offered by Gateway3 and participating IPFS nodes.

@@ -5,7 +5,7 @@ nav_order: 2
 parent: Gateway
 grand_parent: API
 has_children: false
-permalink: /api/gateway/upload
+permalink: /api/gateway/upload.html
 ---
 
 # Upload Data

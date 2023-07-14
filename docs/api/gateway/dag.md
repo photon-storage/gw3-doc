@@ -5,7 +5,7 @@ nav_order: 3
 parent: Gateway
 grand_parent: API
 has_children: false
-permalink: /api/gateway/dag_operation
+permalink: /api/gateway/dag_operation.html
 ---
 
 A close analogy for the DAG operation is the directory operation in operating system.

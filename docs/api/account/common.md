@@ -5,7 +5,7 @@ nav_order: 1
 parent: Account
 grand_parent: API
 has_children: false
-permalink: /api/account/common
+permalink: /api/account/common.html
 ---
 
 # Account Stats
