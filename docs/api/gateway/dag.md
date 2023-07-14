@@ -31,6 +31,11 @@ Adds data to a DAG. Similar to upload request, a CID is returned in the response
   - Description: file path under the root CID
   - Example: `/foo/bar/example.txt`
 
+- **size**
+  - Required: yes
+  - Description: a query parameter that represents the size of upload content.
+  - Example: `87718`
+
 - **ts**
   - Required: yes
   - Description: a query parameter that represents the current unix timestamp
@@ -104,3 +109,27 @@ curl -sSD - -X DELETE "https://delete.dag.com/ipfs/?sargs=auth-data&ssig=sign-da
 # The response header will have something like:
 # ipfs-hash: QmXy8XTZxWZu9cpnVN44oK77xHQQGCKevosGzuvz1ZsZSX
 ```
+
+# Import CAR file as DAG
+
+```javascript
+POST /api/v0/dag/import?{params}
+```
+
+Remove data from a DAG. A CID is returned in the response header `ipfs-hash` if the PUT request succeeds.
+The CID represents the root node of the new DAG after deletion.A follow-up operation can be performed on the new CID to further update the DAG.
+
+- **size**
+  - Required: yes
+  - Description: a query parameter that represents the size of upload content.
+  - Example: `87718`
+
+- **boundary**
+  - Required: yes
+  - Description: a query parameter that represents the multipart form-data boudnary, can a random string.
+  - Example: `A-=?bcd`
+
+- **ts**
+  - Required: yes
+  - Description: a query parameter that represents the current timestamp
+  - Example: `1688644825`
