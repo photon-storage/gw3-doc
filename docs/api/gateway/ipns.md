@@ -83,3 +83,68 @@ curl -sSL -X POST "https://gw3.io/api/v0/name/publish?arg=Qmc7pB5AgED3fKa2MVxY6P
 #   }
 # }
 ```
+
+# Import IPNS Record
+
+```javascript
+POST /api/v0/name/import
+
+{
+      "name":      "k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2",
+      "value":     "QmYHqzKbdrXf3Nunj46BU6MLHSXigzcZsCsVdnv9MFMhzj",
+      "secret_key": "-----BEGIN PRIVATE KEY-----\nAC3CAEAwBQYDJ2VwECIDIA2eisrccrvn/3ctIaow2wb3PN6/SM+gPJALY68WYKqg\n-----END PRIVATE KEY-----\n",
+      "format":    "pem-pkcs8-cleartext",
+      "seq":       100
+}
+```
+
+Import an IPNS record using a user-side generated private key.
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter that represents the current Unix timestamp.
+  - Example: `1688644825`
+
+- **name**
+  - Required: Yes
+  - Description: The imported IPNS record name.
+  - Example: `k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2`
+
+- **value**
+  - Required: Yes
+  - Description: The setup of the IPNS record's value (CID).
+  - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
+
+- **secret_key**
+  - Required: Yes
+  - Description: The text string of the private key information.
+  - Example: `-----BEGIN PRIVATE KEY-----\nAC3CAEAwBQYDJ2VwECIDIA2eisrccrvn/3ctIaow2wb3PN6/SM+gPJALY68WYKqg\n-----END PRIVATE KEY-----\n`
+
+- **format**
+  - Required: Yes
+  - Description: The format of the secret key.
+  - Example: `pem-pkcs8-cleartext` or `libp2p-protobuf-cleartext`
+
+- **seq**
+  - Required: No
+  - Description: Starting value of the record sequence ID.
+  - Example: `10000`
+
+## Example
+
+```bash
+curl -sSL -X POST "http://gw3.io/api/v0/name/import?ts=1688644825" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET" \
+   -d '{
+   "name": "YOUR_IPNS_NAME",
+   "value": "QmYHqzKbdrXf3Nunj46BU6MLHSXigzcZsCsVdnv9MFMhzj",
+   "secret_key": "YOUR_SECRET_TEXT",
+   "format": "pem-pkcs8-cleartext",
+   "seq": 1
+}'
+# {
+#   "code": 200,
+#   "msg": "ok",
+# }
+```
