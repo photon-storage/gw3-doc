@@ -133,7 +133,7 @@ Import an IPNS record using a user-side generated private key.
 ## Example
 
 ```bash
-curl -sSL -X POST "http://gw3.io/api/v0/name/import?ts=1688644825" \
+curl -sSL -X POST "https://gw3.io/api/v0/name/import?ts=1688644825" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET" \
    -d '{
@@ -143,6 +143,36 @@ curl -sSL -X POST "http://gw3.io/api/v0/name/import?ts=1688644825" \
    "format": "pem-pkcs8-cleartext",
    "seq": 1
 }'
+# {
+#   "code": 200,
+#   "msg": "ok",
+# }
+```
+
+# Delete IPNS Record
+
+```javascript
+POST /api/v0/name/rm?key={ipns_name}
+```
+
+Delete an IPNS record from the GW3.
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter that represents the current Unix timestamp.
+  - Example: `1688644825`
+
+- **key**
+  - Required: Yes
+  - Description: An IPNS record.
+  - Example: `k51qzi5uqu5dlfmf1hd70bi1nqnzdsebu5n1ajtfhmx1blbexpiblpp5knvepe`
+
+## Example
+
+```bash
+curl -sSL -X POST "https://gw3.io/api/v0/name/rm?key=k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2&ts=1688644825" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 # {
 #   "code": 200,
 #   "msg": "ok",
