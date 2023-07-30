@@ -116,8 +116,8 @@ curl -sSD - -X DELETE "https://delete.dag.com/ipfs/?sargs=auth-data&ssig=sign-da
 POST /api/v0/dag/import?{params}
 ```
 
-Remove data from a DAG. A CID is returned in the response header `ipfs-hash` if the PUT request succeeds.
-The CID represents the root node of the new DAG after deletion.A follow-up operation can be performed on the new CID to further update the DAG.
+Import the contents of CAR files.
+Multiple files can be uploaded in the form data separated by the given `boundary` mark.
 
 - **size**
   - Required: yes
