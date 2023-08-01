@@ -68,12 +68,12 @@ List all the pins under the account. There are four pin statuses: `pinning`, `pi
 
 - **limit**
   - Required: No
-  - Description: The maximum number of records returned for pagination. The default is 10.
+  - Description: The maximum number of records returned for pagination. The default is `10`.
   - Example: `5`
 
 - **start**
   - Required: No
-  - Description: Skips the first n results for pagination. Default is 0.
+  - Description: Skips the first n results for pagination. Default is `0`.
   - Example: `10`
 
 ## Response Body
@@ -115,6 +115,47 @@ List all the pins under the account. There are four pin statuses: `pinning`, `pi
     "_links": {
         "next": "/api/v0/pin?limit=4&start=8"
     }
+}
+```
+
+# List IPNS
+
+```bash
+curl -X GET "https://account.gw3.io/api/v0/ipns?limit=10&start=0&ts=1688644825" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
+```
+
+List all the ipns under the account.
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter that represents the current UNIX timestamp.
+  - Example: `1688644825`
+
+- **limit**
+  - Required: No
+  - Description: The maximum number of records returned for pagination. The default is `10`.
+  - Example: `5`
+
+- **start**
+  - Required: No
+  - Description: Skips the first n results for pagination. Default is `0`.
+  - Example: `10`
+
+## Response Body
+
+```json
+{
+    "code":200,
+    "data":[
+        {
+            "name":"k51qzi5uqu5dgvei2o3pp7kkz4a6tyj5hp2fdvl2l32wpk5quy657lzh1yaqe0",
+            "value":"QmNYERzV2LfD2kkfahtfv44ocHzEFK1sLBaE7zdcYT2GAZ",
+            "alias":"My first IPNS"
+        }
+   ],
+   "total":1,
 }
 ```
 
