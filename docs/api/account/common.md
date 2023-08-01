@@ -111,10 +111,7 @@ List all the pins under the account. There are four pin statuses: `pinning`, `pi
             "created_at": 1690821900
         }
     ],
-    "total": 14,
-    "_links": {
-        "next": "/api/v0/pin?limit=4&start=8"
-    }
+    "total": 14
 }
 ```
 
@@ -155,7 +152,7 @@ List all the ipns under the account.
             "alias":"My first IPNS"
         }
    ],
-   "total":1,
+   "total":1
 }
 ```
 
