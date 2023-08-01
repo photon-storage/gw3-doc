@@ -22,22 +22,22 @@ PUT /ipfs/{cid}[/{path}][?{params}]
 Adds data to a DAG. Similar to upload request, a CID is returned in the response header `ipfs-hash` if the PUT request succeeds. The CID represents the root node of the new DAG after the addition. A follow-up operation can be performed on the new CID to further update the DAG.
 
 - **cid**
-  - Required: yes
+  - Required: Yes
   - Description: `cid` specifies the DAG root node
   - Example: `QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn`
 
 - **path**
-  - Required: yes
+  - Required: Yes
   - Description: file path under the root CID
   - Example: `/foo/bar/example.txt`
 
 - **size**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the size of upload content.
   - Example: `87718`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -75,17 +75,17 @@ Remove data from a DAG. A CID is returned in the response header `ipfs-hash` if 
 The CID represents the root node of the new DAG after deletion.A follow-up operation can be performed on the new CID to further update the DAG.
 
 - **cid**
-  - Required: yes
+  - Required: Yes
   - Description: `cid` specifies the DAG root node
   - Example: `QmXD3svmCE9KR3kiUSZyZuso5DW3q3hLqBtSqXrFAv22Wc`
 
 - **path**
-  - Required: yes
+  - Required: Yes
   - Description: the `path` to be deleted.
   - Example: `/foo/bar/example.txt`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current timestamp
   - Example: `1688644825`
 
@@ -120,16 +120,16 @@ Import the contents of CAR files.
 Multiple files can be uploaded in the form data separated by the given `boundary` mark.
 
 - **size**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the size of upload content.
   - Example: `87718`
 
 - **boundary**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the multipart form-data boudnary, can a random string.
   - Example: `A-=?bcd`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current timestamp
   - Example: `1688644825`

@@ -17,27 +17,27 @@ GET /ipfs/{cid}[/{path}][?{params}]
 Downloads data at the specified immutable content path.
 
 - **cid**
-  - Required: yes
+  - Required: Yes
   - Description: a valid Content Identifier (CID)
   - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
 
 - **path**
-  - Required: no
+  - Required: No
   - Description: a path parameter pointing at a file or a directory under the root CID
   - Example: `/folder/file.txt`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter representing the current unix timestamp
   - Example: `1688644825`
 
 - **filename**
-  - Required: no
+  - Required: No
   - Description: a query parameter that sets the name returned in `Content-Disposition` HTTP header
   - Example: `filename=file.txt`
 
 - **format**
-  - Required: no
+  - Required: No
   - Description: a query parameter that controls returned data format.
   - Example: `format=car`
 
@@ -69,17 +69,17 @@ Downloads data at the specified mutable content path.
 The `name` is resolved to a CID before serving response from the corresponding `/ipfs/{resolved-cid}[/{path}][?{params}]` content path.
 
 - **name**
-  - Required: yes
+  - Required: Yes
   - Description: a cryptographic IPNS key hash or a human-readable DNS name with DNSLink set-up.
   - Example: `12D3KooWHWW3BLh5kFo1eDNdJhfznDDJJdtooSZJ42iRX756kYbP`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter representing the current unix timestamp
   - Example: `1688644825`
 
 - **path**
-  - Required: no
+  - Required: No
   - Description: a path parameter pointing at a file or a directory under the root CID
   - Example: `/folder/file.txt`
 

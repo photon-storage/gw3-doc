@@ -24,7 +24,7 @@ The UUID is an unique key for each user.
 It is used by other APIs.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -57,12 +57,12 @@ curl -X GET "https://account.gw3.io/api/v0/partner/user/stats?uuid=jack_001&ts=1
 Get usage stats for a given user.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
 - **uuid**
-  - Required: yes
+  - Required: Yes
   - Description: The UUID used when creating the user.
   - Example: `jack_001`
 
@@ -106,7 +106,7 @@ Change a user's plan.
 The incurred fee is charged directly to the partner's account.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -140,7 +140,7 @@ The available permissions are admin, read, write, pin, and unpin.
 Teh admin permission is equivalent to granting all the permissions.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -177,7 +177,7 @@ curl -X GET "https://account.gw3.io/api/v0/partner/user/keys?uuid=jack_001&?ts=1
 List all the access keys for a given user.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -216,7 +216,7 @@ curl -X DELETE "https://account.gw3.io/api/v0/partner/user/key?ts=1688644825" \
 Delete the access key by name for a given user.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 

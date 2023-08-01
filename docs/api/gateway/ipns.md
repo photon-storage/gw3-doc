@@ -18,12 +18,12 @@ Create a new IPNS record and bind it to the given `cid`.
 An IPNS record name is returned in the response JSON if the creation request succeeds.
 
 - **arg**
-  - Required: yes
+  - Required: Yes
   - Description: a valid Content Identifier (CID)
   - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -53,17 +53,17 @@ POST /api/v0/name/publish?arg={cid}&key={ipns_name}
 Update an existing IPNS record with `name`, pointing it to the given `cid`.
 
 - **key**
-  - Required: yes
+  - Required: Yes
   - Description: an IPNS record
   - Example: `12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn`
 
 - **arg**
-  - Required: yes
+  - Required: Yes
   - Description: a valid Content Identifier (CID)
   - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 

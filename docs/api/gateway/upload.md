@@ -22,12 +22,12 @@ Data is sent through the HTTP body of the second POST request.
 A CID is returned in the response header `ipfs-hash` if the POST request succeeds.
 
 - **size**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the size of upload content.
   - Example: `87718`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 

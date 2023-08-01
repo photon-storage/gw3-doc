@@ -18,7 +18,7 @@ curl -X GET "https://account.gw3.io/api/v0/stats?ts=1688644825" \
 Get the usage stats for a given account.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -49,6 +49,73 @@ Response body
     }
 }
 
+```
+
+# List Pin
+
+```bash
+curl -X GET "https://account.gw3.io/api/v0/pin?limit=10&start=0&ts=1688644825" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
+```
+
+List all the pins under the account. There are four pin statuses: `pinning`, `pinned`, `failure`, and `unpinning`.
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter that represents the current UNIX timestamp.
+  - Example: `1688644825`
+
+- **limit**
+  - Required: No
+  - Description: The maximum number of records returned for pagination. The default is 10.
+  - Example: `5`
+
+- **start**
+  - Required: No
+  - Description: Skips the first n results for pagination. Default is 0.
+  - Example: `10`
+
+## Response Body
+
+```json
+{
+    "code": 200,
+    "data": [
+        {
+            "name": "",
+            "cid": "bafybeig6ka5mlwkl4subqhaiatalkcleo4jgnr3hqwvpmsqfca27cijp3i",
+            "status": "unpinning",
+            "size": 623,
+            "created_at": 1690821977
+        },
+        {
+            "name": "Unknow CID",
+            "cid": "QmNYERzV2LfD2kkfahtfv44ocHzEFK1sLBaE7zdcYT2GAZ",
+            "status": "failure",
+            "size": 16,
+            "created_at": 1690821971
+        },
+        {
+            "name": "996.png",
+            "cid": "bafybeiafyvqlazbbbtjnn6how5d6h6l6rxbqc4qgpbmteaiskjrffmyy4a",
+            "status": "pinned",
+            "size": 711,
+            "created_at": 1690821965
+        },
+        {
+            "name": "123.txt",
+            "cid": "QmS2zdgve11D6Qg3yCne4pozZPs99TEXDNCNrct4mwSeKf",
+            "status": "pinning",
+            "size": 4297,
+            "created_at": 1690821900
+        }
+    ],
+    "total": 14,
+    "_links": {
+        "next": "/api/v0/pin?limit=4&start=8"
+    }
+}
 ```
 
 # Plans
@@ -102,7 +169,7 @@ The available permissions are admin, read, write, pin, and unpin.
 The admin permission is equivalent to granting all the permissions.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -138,7 +205,7 @@ curl -X GET "https://account.gw3.io/api/v0/keys?ts=1688644825" \
 List all access keys.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
@@ -177,7 +244,7 @@ curl -X DELETE "https://account.gw3.io/api/v0/key?ts=1688644825" \
 Delete the access key by name.
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 

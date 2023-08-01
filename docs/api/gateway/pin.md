@@ -18,17 +18,17 @@ Pinning prevents a CID and its descendents from being garbage collected.
 This allows data to persist on the IPFS network.
 
 - **cid**
-  - Required: yes
+  - Required: Yes
   - Description: a valid Content Identifier (CID)
   - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
 - **name**
-  - Required: no
+  - Required: No
   - Description: custom the content name
   - Example: `123.txt`
 
@@ -55,12 +55,12 @@ Unpinning does not remove the CID from the IPFS network immediately.
 It simply allows the CID to be garbage collected in the next cycle.
 
 - **cid**
-  - Required: yes
+  - Required: Yes
   - Description: a valid Content Identifier (CID)
   - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
 
 - **ts**
-  - Required: yes
+  - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
 
