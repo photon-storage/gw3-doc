@@ -11,7 +11,7 @@ permalink: /api/gateway/pinning.html
 # Pin a CID
 
 ```javascript
-POST /api/v0/pin/add?arg={cid}
+POST /api/v0/pin/add?arg={cid}&name={name}
 ```
 
 Pinning prevents a CID and its descendents from being garbage collected.
@@ -26,6 +26,11 @@ This allows data to persist on the IPFS network.
   - Required: yes
   - Description: a query parameter that represents the current unix timestamp
   - Example: `1688644825`
+
+- **name**
+  - Required: no
+  - Description: custom the content name
+  - Example: `123.txt`
 
 ## Example
 
