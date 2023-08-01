@@ -151,8 +151,8 @@ List all the ipns under the account.
             "value":"QmNYERzV2LfD2kkfahtfv44ocHzEFK1sLBaE7zdcYT2GAZ",
             "alias":"My first IPNS"
         }
-   ],
-   "total":1
+    ],
+    "total":1
 }
 ```
 
