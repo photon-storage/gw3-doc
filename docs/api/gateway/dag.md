@@ -124,12 +124,34 @@ Multiple files can be uploaded in the form data separated by the given `boundary
   - Description: a query parameter that represents the size of upload content.
   - Example: `87718`
 
-- **boundary**
-  - Required: Yes
-  - Description: a query parameter that represents the multipart form-data boudnary, can a random string.
-  - Example: `A-=?bcd`
-
 - **ts**
   - Required: Yes
   - Description: a query parameter that represents the current timestamp
   - Example: `1688644825`
+
+## Example
+
+```bash
+curl -sS -X POST "https://gw3.io/api/v0/dag/import?size=80000&ts=1688644825" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET" | jq
+
+# You should receive a response similar to this:
+# {
+#    "code":200,
+#    "msg":"ok",
+#    "data":{
+#       "url":"https://import.dag.com/ipfs/?sargs=auth-data&ssig=sign-data"
+#    }
+# }
+
+curl -sSL -X POST "https://import.dag.com/ipfs/?sargs=auth-data&ssig=sign-data" \
+     -F file=@example.car
+# You should receive a response similar to this:
+# {
+#    "Stats":{
+#       "BlockCount":2,
+#       "BlockBytesCount":84
+#    }
+# }
+```
