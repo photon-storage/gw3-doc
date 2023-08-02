@@ -117,7 +117,6 @@ POST /api/v0/dag/import?{params}
 ```
 
 Import the contents of CAR files.
-Multiple files can be uploaded in the form data separated by the given `boundary` mark.
 
 - **size**
   - Required: Yes
