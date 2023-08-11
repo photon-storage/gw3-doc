@@ -54,7 +54,7 @@ Response body
 # List Pin
 
 ```bash
-curl -X GET "https://account.gw3.io/api/v0/pin?limit=10&start=0&ts=1688644825" \
+curl -X GET "https://account.gw3.io/api/v0/pin?status=pinned&limit=10&start=0&ts=1688644825" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
@@ -65,6 +65,11 @@ List all the pins under the account. There are four pin statuses: `pinning`, `pi
   - Required: Yes
   - Description: A query parameter that represents the current UNIX timestamp.
   - Example: `1688644825`
+
+- **status**
+  - Required: No
+  - Description: Filter the specific type of pin to list.
+  - Example: `pinned`
 
 - **limit**
   - Required: No
