@@ -120,6 +120,42 @@ List all the pins under the account. There are four pin statuses: `pinning`, `pi
 }
 ```
 
+# Get Pin
+
+```bash
+curl -X GET "https://account.gw3.io/api/v0/pin/{cid}?ts=1688644825" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
+```
+
+Retrieve the pin status of a specific CID.
+
+- **cid**
+  - Required: Yes
+  - Description: A CID that has been previously pinned by GW3.
+  - Example: `bafybeidsanbjcw4nzqh275lfz4zqssztgbz2zpzz76glkz34dbwfhyfnxy`
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter representing the current UNIX timestamp.
+  - Example: `1688644825`
+
+## Response Body
+
+```json
+{
+    "code": 200,
+    "msg": "ok",
+    "data": {
+        "name": "my_codes",
+        "cid": "bafybeidsanbjcw4nzqh275lfz4zqssztgbz2zpzz76glkz34dbwfhyfnxy",
+        "status": "pinned",
+        "size": 53695,
+        "created_at": 1690978958
+    }
+}
+```
+
 # List IPNS
 
 ```bash
