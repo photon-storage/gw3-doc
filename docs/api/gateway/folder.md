@@ -64,7 +64,7 @@ Specify the old CID root, links you want to add/update in the DAG, and links you
   - Description: An array of tuples specifying the link (name --> CID) you want to add to the DAG. If a link with the same name already exists in the old DAG, the old link will be replaced. All CIDs must be pinned by GW3 first.
   - Example: `[["my_license", "k2cwuee0yyjcb7195g3gkv0ejhp9b37zf3glzlayg5h81xgun5jd9x1i"]]`
 
-- **rm**
+- **remove**
   - Required: No
   - Description: Remove existing links in the DAG by their names.
   - Example: `["README.md"]`
@@ -78,7 +78,7 @@ Specify the old CID root, links you want to add/update in the DAG, and links you
   - Required: No
   - Description: Unpin the old DAG; this requires `pin_new` to be true. If the old DAG is still being used by another of your pinned DAGs, an error will be returned.
   - Example: `true`
-  
+
 ## Request body
 
 ```json
