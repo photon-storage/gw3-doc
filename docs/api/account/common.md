@@ -190,7 +190,9 @@ List all the ipns under the account.
         {
             "name":"k51qzi5uqu5dgvei2o3pp7kkz4a6tyj5hp2fdvl2l32wpk5quy657lzh1yaqe0",
             "value":"QmNYERzV2LfD2kkfahtfv44ocHzEFK1sLBaE7zdcYT2GAZ",
-            "alias":"My first IPNS"
+            "alias":"My first IPNS",
+            "created_at": 1690217292, // Created Unix timestamp.
+            "publish_at": 1692526344  // Last published to network Unix timestamp.
         }
     ],
     "total":1

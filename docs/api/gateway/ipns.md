@@ -11,7 +11,7 @@ permalink: /api/gateway/ipns.html
 # Create IPNS Record
 
 ```javascript
-POST /api/v0/name/create?arg={cid}
+POST /api/v0/name/create?arg={cid}&alias={alias}
 ```
 
 Create a new IPNS record and bind it to the given `cid`.
@@ -21,6 +21,11 @@ An IPNS record name is returned in the response JSON if the creation request suc
   - Required: Yes
   - Description: a valid Content Identifier (CID)
   - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
+
+- **alias**
+  - Required: No
+  - Description: Set up a nickname for your IPNS record
+  - Example: `Jack.eth`
 
 - **ts**
   - Required: Yes
@@ -93,6 +98,7 @@ POST /api/v0/name/import
       "name":      "k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2",
       "value":     "QmYHqzKbdrXf3Nunj46BU6MLHSXigzcZsCsVdnv9MFMhzj",
       "secret_key": "-----BEGIN PRIVATE KEY-----\nAC3CAEAwBQYDJ2VwECIDIA2eisrccrvn/3ctIaow2wb3PN6/SM+gPJALY68WYKqg\n-----END PRIVATE KEY-----\n",
+      "alias": "toto",
       "format":    "pem-pkcs8-cleartext",
       "seq":       100
 }
@@ -124,6 +130,11 @@ Import an IPNS record using a user-side generated private key.
   - Required: Yes
   - Description: The format of the secret key.
   - Example: `pem-pkcs8-cleartext` or `libp2p-protobuf-cleartext`
+
+- **alias**
+  - Required: No
+  - Description: Set up a nickname for your IPNS record
+  - Example: `Jack.eth`
 
 - **seq**
   - Required: No
