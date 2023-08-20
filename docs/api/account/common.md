@@ -11,7 +11,7 @@ permalink: /api/account/common.html
 # Account Stats
 
 ```bash
-curl -X GET "https://account.gw3.io/api/v0/stats?ts=1688644825" \
+curl -X GET "https://account.gw3.io/api/v0/stats?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
@@ -54,7 +54,7 @@ Response body
 # List Pin
 
 ```bash
-curl -X GET "https://account.gw3.io/api/v0/pin?status=pinned&limit=10&start=0&ts=1688644825" \
+curl -X GET "https://account.gw3.io/api/v0/pin?status=pinned&limit=10&start=0&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
@@ -123,7 +123,7 @@ List all the pins under the account. There are four pin statuses: `pinning`, `pi
 # Get Pin
 
 ```bash
-curl -X GET "https://account.gw3.io/api/v0/pin/{cid}?ts=1688644825" \
+curl -X GET "https://account.gw3.io/api/v0/pin/{cid}?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
@@ -159,7 +159,7 @@ Retrieve the pin status of a specific CID.
 # List IPNS
 
 ```bash
-curl -X GET "https://account.gw3.io/api/v0/ipns?limit=10&start=0&ts=1688644825" \
+curl -X GET "https://account.gw3.io/api/v0/ipns?limit=10&start=0&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
@@ -196,6 +196,42 @@ List all the ipns under the account.
         }
     ],
     "total":1
+}
+```
+
+# Get IPNS
+
+```bash
+curl -X GET "https://account.gw3.io/api/v0/ipns/{name}?ts=$(date +%s)" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
+```
+
+Retrieve the IPNS record by name.
+
+- **name**
+  - Required: Yes
+  - Description: The IPNS record name you've created or imported.
+  - Example: `k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2`
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter representing the current UNIX timestamp.
+  - Example: `1688644825`
+
+## Response Body
+
+```json
+{
+    "code": 200,
+    "msg": "ok",
+    "data": {
+        "name": "k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2",
+        "value": "QmVJ4ZUSC9HS7H1P8TrqP5UDGByGraJwwMpKpUKQnYLqV5",
+        "alias": "Test1",
+        "created_at": 1690217292,
+        "publish_at": 1691747064
+    }
 }
 ```
 
@@ -241,7 +277,7 @@ Response body
 # Create Access Key
 
 ```bash
-curl -X POST "https://account.gw3.io/api/v0/key?ts=1688644825" \
+curl -X POST "https://account.gw3.io/api/v0/key?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
@@ -279,7 +315,7 @@ Response body
 # List Access Key
 
 ```bash
-curl -X GET "https://account.gw3.io/api/v0/keys?ts=1688644825" \
+curl -X GET "https://account.gw3.io/api/v0/keys?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
@@ -318,7 +354,7 @@ Response body
 # Delete User Access Key
 
 ```bash
-curl -X DELETE "https://account.gw3.io/api/v0/key?ts=1688644825" \
+curl -X DELETE "https://account.gw3.io/api/v0/key?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```

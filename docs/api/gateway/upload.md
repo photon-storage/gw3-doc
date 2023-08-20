@@ -35,7 +35,7 @@ A CID is returned in the response header `ipfs-hash` if the POST request succeed
 
 ```bash
 # Upload a picture named A88.jpg with a size of 88718
-curl -sS -X POST 'https://gw3.io/ipfs/?size=88718&ts=1688709607' \
+curl -sS -X POST 'https://gw3.io/ipfs/?size=88718&ts=$(date +%s)' \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET" ｜ jq
 

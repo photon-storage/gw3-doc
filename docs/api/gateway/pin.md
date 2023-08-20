@@ -35,7 +35,7 @@ This allows data to persist on the IPFS network.
 ## Example
 
 ```bash
-curl -sSL -X POST "https://gw3.io/api/v0/pin/add?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&ts=1688644825" \
+curl -sSL -X POST "https://gw3.io/api/v0/pin/add?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
@@ -67,7 +67,7 @@ It simply allows the CID to be garbage collected in the next cycle.
 ## Example
 
 ```bash
-curl -sSL -X POST "https://gw3.io/api/v0/pin/rm?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&ts=1688644825" \
+curl -sSL -X POST "https://gw3.io/api/v0/pin/rm?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 

@@ -13,7 +13,7 @@ The **Folder** is a high-level abstraction that allows users to easily operate o
 # Folder Import
 
 ```bash
-curl -X PUT "https://gw3.io/api/v0/folder/{cid}?ts=1688644825" \
+curl -X PUT "https://gw3.io/api/v0/folder/{cid}?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```
@@ -42,7 +42,7 @@ Import a previously pinned CID to the folder system. For large DAGs (with many l
 # Folder Operation
 
 ```bash
-curl -X POST "https://gw3.io/api/v0/folder/operation?ts=1688644825" \
+curl -X POST "https://gw3.io/api/v0/folder/operation?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 ```

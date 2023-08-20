@@ -45,7 +45,7 @@ Adds data to a DAG. Similar to upload request, a CID is returned in the response
 
 ```bash
 # Upload example text to a DAG root and get the new DAG root.
-curl -sS -X PUT "https://gw3.io/ipfs/QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn/example.txt?size=88718&ts=1688644825" \
+curl -sS -X PUT "https://gw3.io/ipfs/QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn/example.txt?size=88718&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET" | jq
 
@@ -92,7 +92,7 @@ The CID represents the root node of the new DAG after deletion.A follow-up opera
 ## Example
 
 ```bash
-curl -sS -X DELETE "https://gw3.io/ipfs/QmUcCD6xUMkwQVsChPRYKJQVtduea9VFJJjzuEFqa92fYm/example.txt?ts=1688644825" \
+curl -sS -X DELETE "https://gw3.io/ipfs/QmUcCD6xUMkwQVsChPRYKJQVtduea9VFJJjzuEFqa92fYm/example.txt?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET" | jq
 
@@ -131,7 +131,7 @@ Import the contents of CAR files.
 ## Example
 
 ```bash
-curl -sS -X POST "https://gw3.io/api/v0/dag/import?size=80000&ts=1688644825" \
+curl -sS -X POST "https://gw3.io/api/v0/dag/import?size=80000&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET" | jq
 

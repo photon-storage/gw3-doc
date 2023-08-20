@@ -35,7 +35,7 @@ An IPNS record name is returned in the response JSON if the creation request suc
 ## Example
 
 ```bash
-curl -sSL -X POST "https://gw3.io/api/v0/name/create?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&ts=1688644825" \
+curl -sSL -X POST "https://gw3.io/api/v0/name/create?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
@@ -75,7 +75,7 @@ Update an existing IPNS record with `name`, pointing it to the given `cid`.
 ## Example
 
 ```bash
-curl -sSL -X POST "https://gw3.io/api/v0/name/publish?arg=Qmc7pB5AgED3fKa2MVxY6PBoVswQACfDDfBtFs1c7XCwpU&key=12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn&ts=1688644825" \
+curl -sSL -X POST "https://gw3.io/api/v0/name/publish?arg=Qmc7pB5AgED3fKa2MVxY6PBoVswQACfDDfBtFs1c7XCwpU&key=12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
@@ -144,7 +144,7 @@ Import an IPNS record using a user-side generated private key.
 ## Example
 
 ```bash
-curl -sSL -X POST "https://gw3.io/api/v0/name/import?ts=1688644825" \
+curl -sSL -X POST "https://gw3.io/api/v0/name/import?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET" \
    -d '{
@@ -181,7 +181,7 @@ Delete an IPNS record from the GW3.
 ## Example
 
 ```bash
-curl -sSL -X POST "https://gw3.io/api/v0/name/rm?key=k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2&ts=1688644825" \
+curl -sSL -X POST "https://gw3.io/api/v0/name/rm?key=k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 # {

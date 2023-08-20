@@ -44,7 +44,7 @@ Downloads data at the specified immutable content path.
 ## Example
 
 ```bash
-curl -sSL -X GET "https://gw3.io/ipfs/QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ?ts=1688698793" \
+curl -sSL -X GET "https://gw3.io/ipfs/QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
@@ -86,7 +86,7 @@ The `name` is resolved to a CID before serving response from the corresponding `
 ## Example
 
 ```bash
-curl -sSL -X GET "https://gw3.io/ipns/12D3KooWHWW3BLh5kFo1eDNdJhfznDDJJdtooSZJ42iRX756kYbP?ts=1688698793" \
+curl -sSL -X GET "https://gw3.io/ipns/12D3KooWHWW3BLh5kFo1eDNdJhfznDDJJdtooSZJ42iRX756kYbP?ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
