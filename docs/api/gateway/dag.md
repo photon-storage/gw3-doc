@@ -110,6 +110,56 @@ curl -sSD - -X DELETE "https://delete.dag.com/ipfs/?sargs=auth-data&ssig=sign-da
 # ipfs-hash: QmXy8XTZxWZu9cpnVN44oK77xHQQGCKevosGzuvz1ZsZSX
 ```
 
+# Get a DAG node
+
+```javascript
+GET /api/v0/dag/get?arg={cid}&ts={ts}
+```
+
+- **cid**
+  - Required: Yes
+  - Description: `cid` specifies the DAG root node
+  - Example: `QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn`
+
+- **ts**
+  - Required: Yes
+  - Description: a query parameter that represents the current unix timestamp
+  - Example: `1688644825`
+
+## Example
+
+```bash
+# Upload example text to a DAG root and get the new DAG root.
+curl -sS -X GET "https://gw3.io/api/v0/dag/get?arg=QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn&ts=$(date +%s)" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
+
+# You should receive a response similar to this:
+#{
+#   "Data":{
+#      "/":{
+#         "bytes":"CAE"
+#      }
+#   },
+#   "Links":[
+#      {
+#         "Hash":{
+#            "/":"bafkreigxxmjxpd2bthbw6snmiygmoja3kchvlju5u6gsipenuy4r3l3yqy"
+#         },
+#         "Name":"LICENSE",
+#         "Tsize":1066
+#      },
+#      {
+#         "Hash":{
+#            "/":"bafkreifjyobt46htw4fxgaf3idzi6ucem44sbextbob7vvxqqxo3ezps7e"
+#         },
+#         "Name":"README.md",
+#         "Tsize":1080
+#      }
+#   ]
+#}
+```
+
 # Import CAR file as DAG
 
 ```javascript
