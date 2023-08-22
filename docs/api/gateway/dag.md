@@ -130,7 +130,7 @@ GET /api/v0/dag/get?arg={cid}&ts={ts}
 
 ```bash
 # Upload example text to a DAG root and get the new DAG root.
-curl -sS -X GET "https://gw3.io/api/v0/dag/get?arg=QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn&ts=$(date +%s)" \
+curl -L -sS -X GET "https://gw3.io/api/v0/dag/get?arg=QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
