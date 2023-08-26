@@ -64,7 +64,7 @@ interface ProgressEvent {
 Retrieves data from Gateway3 using the specified CID.
 
 ```ts
-async function getIpfs(cid: string);
+async function getIpfs(cid: string)
 ```
 
 #### addPin
@@ -72,7 +72,7 @@ async function getIpfs(cid: string);
 Requests Gateway3 to pin the specified CID.
 
 ```ts
-async function addPin(cid: string);
+async function addPin(cid: string)
 ```
 
 #### removePin
@@ -80,7 +80,7 @@ async function addPin(cid: string);
 Asks Gateway3 to unpin the specified CID.
 
 ```ts
-async function removePin(cid: string);
+async function removePin(cid: string)
 ```
 
 #### dagAdd
@@ -88,7 +88,7 @@ async function removePin(cid: string);
 Adds data to a DAG under the specified root and path.
 
 ```ts
-async function dagAdd(root: string, path: string, data: Uint8Array): Promise<string>;
+async function dagAdd(root: string, path: string, data: Uint8Array)
 ```
 
 #### dagRm
@@ -96,7 +96,7 @@ async function dagAdd(root: string, path: string, data: Uint8Array): Promise<str
 Removes the data from a DAG at the given path.
 
 ```ts
-async function dagRm(root: string, path: string): Promise<string>;
+async function dagRm(root: string, path: string)
 ```
 
 #### dagImport
@@ -104,7 +104,7 @@ async function dagRm(root: string, path: string): Promise<string>;
 Imports the contents of CAR files into the DAG.
 
 ```ts
-async function dagImport(file: File): Promise<any>;
+async function dagImport(file: File)
 ```
 
 #### createIpns
@@ -112,7 +112,7 @@ async function dagImport(file: File): Promise<any>;
 Creates a new IPNS record and associates it with the given CID.
 
 ```ts
-async function createIpns(cid: string): Promise<any>;
+async function createIpns(cid: string)
 ```
 
 #### updateIpns
@@ -120,5 +120,5 @@ async function createIpns(cid: string): Promise<any>;
 Updates an existing IPNS record by its name, pointing it to the specified CID.
 
 ```ts
-async function updateIpns(name: string, cid: string): Promise<any>;
+async function updateIpns(name: string, cid: string)
 ```
