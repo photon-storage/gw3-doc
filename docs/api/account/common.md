@@ -192,7 +192,7 @@ List all the ipns under the account.
             "value":"QmNYERzV2LfD2kkfahtfv44ocHzEFK1sLBaE7zdcYT2GAZ",
             "alias":"My first IPNS",
             "created_at": 1690217292, // Created Unix timestamp.
-            "publish_at": 1692526344  // Last published to network Unix timestamp.
+            "publish_at": 1692526344  // Last timestamp, the user updated the record's CID
         }
     ],
     "total":1
