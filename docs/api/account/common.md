@@ -156,6 +156,40 @@ Retrieve the pin status of a specific CID.
 }
 ```
 
+
+# Update Pin Name
+
+```bash
+curl -X POST "https://account.gw3.io/api/v0/pin/rename?ts=$(date +%s)" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
+```
+
+To update the name of your pinned CID
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter representing the current UNIX timestamp.
+  - Example: `1688644825`
+
+## Request body
+
+```json
+{
+    "cid": "k51qzi5uqu5dlfmf1hd70bi1nqnzdsebu5n1ajtfhmx1blbexpiblpp5knvepe",
+    "name": "hello.html"
+}
+```
+
+## Response Body
+
+```json
+{
+    "code": 200,
+    "msg": "ok",
+}
+```
+
 # List IPNS
 
 ```bash
