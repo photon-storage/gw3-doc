@@ -235,6 +235,39 @@ Retrieve the IPNS record by name.
 }
 ```
 
+# Update IPNS Alias
+
+```bash
+curl -X POST "https://account.gw3.io/api/v0/ipns/alias?ts=$(date +%s)" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
+```
+
+To update the alias of your IPNS record
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter representing the current UNIX timestamp.
+  - Example: `1688644825`
+
+## Request body
+
+```json
+{
+    "name": "k51qzi5uqu5dlfmf1hd70bi1nqnzdsebu5n1ajtfhmx1blbexpiblpp5knvepe",
+    "alias": "icu"
+}
+```
+
+## Response Body
+
+```json
+{
+    "code": 200,
+    "msg": "ok",
+}
+```
+
 # Plans
 
 ```bash
