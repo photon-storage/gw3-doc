@@ -269,6 +269,42 @@ Retrieve the IPNS record by name.
 }
 ```
 
+# Search IPNS
+
+```bash
+curl -X GET "https://account.gw3.io/api/v0/ipns/search?alias={alias}&ts=$(date +%s)" \
+   -H "X-Access-Key: YOUR_ACCESS_KEY" \
+   -H "X-Access-Secret: YOUR_ACCESS_SECRET"
+```
+
+Search the IPNS record by alias.
+
+- **alias**
+  - Required: Yes
+  - Description: The IPNS alias.
+  - Example: `first_record`
+
+- **ts**
+  - Required: Yes
+  - Description: A query parameter representing the current UNIX timestamp.
+  - Example: `1688644825`
+
+## Response Body
+
+```json
+{
+    "code": 200,
+    "msg": "ok",
+    "data": {
+        "name": "k51qzi5uqu5dj14wlw7kc5xlzqzy4u42og35hhhihi2v8551odsw7hlgwhskz2",
+        "value": "QmVJ4ZUSC9HS7H1P8TrqP5UDGByGraJwwMpKpUKQnYLqV5",
+        "alias": "first_record",
+        "created_at": 1690217292,
+        "publish_at": 1691747064
+    }
+}
+```
+
 # Update IPNS Alias
 
 ```bash
