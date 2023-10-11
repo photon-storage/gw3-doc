@@ -11,7 +11,7 @@ permalink: /api/gateway/ipns.html
 # Create IPNS Record
 
 ```javascript
-POST /api/v0/name/create?arg={cid}&alias={alias}
+POST /api/v0/name/create?arg={cid}&alias={alias}&pin=false
 ```
 
 Create a new IPNS record and bind it to the given `cid`.
@@ -27,6 +27,11 @@ An IPNS record name is returned in the response JSON if the creation request suc
   - Description: Set up a nickname for your IPNS record
   - Example: `Jack.eth`
 
+- **pin**
+  - Required: No
+  - Description: A bool to trigger /pin/add the CID before creating the IPNS records.
+  - Default: `false`
+
 - **ts**
   - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
@@ -35,7 +40,7 @@ An IPNS record name is returned in the response JSON if the creation request suc
 ## Example
 
 ```bash
-curl -sSL -X POST "https://gw3.io/api/v0/name/create?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&ts=$(date +%s)" \
+curl -sSL -X POST "https://gw3.io/api/v0/name/create?arg=QmVR8ML33bKpJdEcvMR66gkm1Nraf2iWVgQsefPrd3U8og&pin=false&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
@@ -52,7 +57,7 @@ curl -sSL -X POST "https://gw3.io/api/v0/name/create?arg=QmVR8ML33bKpJdEcvMR66gk
 # Update IPNS Record
 
 ```javascript
-POST /api/v0/name/publish?arg={cid}&key={ipns_name}
+POST /api/v0/name/publish?arg={cid}&key={ipns_name}&pin=false
 ```
 
 Update an existing IPNS record with `name`, pointing it to the given `cid`.
@@ -67,6 +72,11 @@ Update an existing IPNS record with `name`, pointing it to the given `cid`.
   - Description: a valid Content Identifier (CID)
   - Example: `QmRsz7zXvecvwJPaPjwR6WMHFJPbMc63SEJtuXJC4U16VZ`
 
+- **pin**
+  - Required: No
+  - Description: A bool to trigger /pin/add the CID before update the IPNS record.
+  - Default: `false`
+
 - **ts**
   - Required: Yes
   - Description: a query parameter that represents the current unix timestamp
@@ -75,7 +85,7 @@ Update an existing IPNS record with `name`, pointing it to the given `cid`.
 ## Example
 
 ```bash
-curl -sSL -X POST "https://gw3.io/api/v0/name/publish?arg=Qmc7pB5AgED3fKa2MVxY6PBoVswQACfDDfBtFs1c7XCwpU&key=12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn&ts=$(date +%s)" \
+curl -sSL -X POST "https://gw3.io/api/v0/name/publish?arg=Qmc7pB5AgED3fKa2MVxY6PBoVswQACfDDfBtFs1c7XCwpU&key=12D3KooWL4iYQFgUJErG1HHHPMGVrh6rdopcosH6wNyyLcAjnNFn&pin=false&ts=$(date +%s)" \
    -H "X-Access-Key: YOUR_ACCESS_KEY" \
    -H "X-Access-Secret: YOUR_ACCESS_SECRET"
 
