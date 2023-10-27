@@ -33,6 +33,8 @@ Response body
         "provider": "gw3",
         "email": "example@example.com",
         "email_verified": true,
+        "eth_addr": "0x4838b106fce9647bdf1e7877bf73ce8b0bad5f97",
+        "token_amount": "0.00",
         "plan": "Advanced",
         "next_plan": "Starter",
         "next_bill_at": 1689902000,
